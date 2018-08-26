@@ -1,0 +1,140 @@
+SILK
+	Main page template
+		Tile
+			Line SILK
+			Line MANAGEMENT
+		Menu bar
+			Link MEN
+			Link WOMEN
+			Link LIFESTYLE
+			Link SUBMISSION
+			Link ABOUT
+			(if favourites for current session) Link FAVOURITES
+		[content] ...
+	Home page
+		Home page video
+			play automatically
+				Video may be from youtube or dailymotion
+				(currently, we don't allow to upload video)
+				Check killmanagement code
+		Section DISCOVER MODE
+	Page MEN
+		[content]
+			List of model cards
+			3 models per line
+			Model card: 1 row
+				Column model photo (link to model page)
+				Column model details. Details:
+					Line model name (link to model page)
+					1) Line Height {height}
+					2) Line Bust {bust}
+					3) Line Waist {waist}
+					4) Line Hips {hips}
+					5) Line Shoes {shoes}
+					6) Line Hair {hair}
+					7) Line Eyes {eyes}
+					Line with icons
+						Column with 2 lines
+							Line with instagram icon (link to model instagram page)
+							Line with number of instagram followers
+						Column with a heart. TODO What's the purpose of the heart ? To like Instagram page ? Or to add to favourites ?
+	Page WOMEN: same layout as men page. TODO Are model details different for men and women ?
+	Page LIFESTYLE: same layout as men page
+	Page SUBMISSION
+		[content]
+		Line COULD YOU BE A SILK MODEL ?
+		Row
+			Column text
+				If you are at least 5'8''/1.73m (girls) or
+				6'0''/1.83m (boys) and think you have the
+				right look for us, please complete the
+				form to get in touch with us. Send us
+				some recent photographs, including a
+				headshot and full length picture, and
+				one of our team will be in touch if we'd
+				like to meet you.
+			Column form
+				Raio buttons: Male, Female
+				Field first name
+				Field Last name
+				Field Email
+				Field Telephone
+				Field address
+				Field City/Town
+				Field Postcode
+				Field Date of Birth
+				Field Hair colour
+				Field Eye colour
+				Field Height
+				Field Waist
+				Field Bust
+				Field Dress
+				Field Hips
+				Field Shoe size
+				Section IMAGES (UP TO 2MB EACH)
+					Button Drop file here to upload
+					Button Drop file here to upload
+					Button Drop file here to upload
+				Checkbox:
+					I read and I accept the information to the Applicant.
+				Checkbox:
+					I understand and agree that upon my acceptance (that is not compulsory) you will be entilted to
+					transfer my data to third parties with whom you have a contractual relationship (partners, sponsors ...)
+					so that I may receive special offers or other information from then.
+				Button Submit
+	Page ABOUT
+		[content]
+			Line: SILK management is a modelling agency specializing in management, scouting, casting, consulting and brand development.
+			Form Contact us
+				Field Name
+				Field email
+				Field Phone Number
+				Field message
+				Button Send:
+					Send to silk email (admin panel should allow to set silk email)
+			Section DISCOVER MORE
+	PAGE FAVOURITES: same layout as men page.
+	Model page (for a model)
+		Page title is model name
+		Row
+			Column model name, aligned to left
+			Column with close button (cross), aligned to left
+		Row
+			Column with centered links
+				Link PORTFOLIO -> page portfolio for this model
+				Link:
+					If model in favourites:
+						+ FAVOURITES: add model to favourites list
+					If model not in favourites:
+						- FAVOURITES: remove model from favourites list
+				Link (down arrow) PRINT -> portfolio print page
+			Column with model details
+				Line HEIGHT
+				Line {height}
+				Line BUST
+				Line {bust}
+				Line WAIST
+				Line {waist}
+				Line HIPS
+				Line {hips}
+				Line SHOES
+				Line {shoes}
+				Line HAIR
+				Line {hair}
+				Line EYES
+				Line {eyes}
+			Column with 2 lines:
+				Line first model portfolio photo + arrows to change displayed photo
+				Line with photo index (e.g. 01/04 for first photo)
+	Portfolio page (for a model)
+		4 photos displayed horizontally, full page (2 photos per page width ?), with horizontal scroll bar if necessary
+	Portfolio print page (for a model)
+		Try to print in paper format Letter.
+		Row SLIK
+		Row MANAGEMENT
+		Model photos in 2x2 grid
+		Model name
+		Model details, separated with a dot: Height: height * ... * Eyes: eyes
+		Model professional address ?
+	Section DISCOVER MORE
+		todo What to put in DISCOVER MORE ?

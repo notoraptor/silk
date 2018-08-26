@@ -1,0 +1,52 @@
+# DATABASE
+admin_account
+	admin_id
+	username
+	password
+	approved
+configuration
+	config_id
+	home_video_link (youtube or dailymotion)
+	about_page_text
+	submission_page_text
+	submission_page_data_sharing_text
+	site_email
+model
+	model_id
+	instagram_link
+	sex: male | female
+	in_lifestyle: true | false
+	first_name
+	last_name
+	address
+	height
+	bust
+	waist
+	hips
+	shoes
+	hair
+	eyes
+model_photo
+	model_id
+	photo_file_name
+	photo_rank
+
+# FILE SYSTEM
+data/
+	model/
+		[model_id]/
+			[photos ...]
+silkadmin/
+index.php
+men.php
+women.php
+lifestyle.php
+submission.php
+about.php
+favourites.php
+model.php
+portfolio.php
+portfolio-print.php
+
+# SESSION
+favourite_models: [model ID]
