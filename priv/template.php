@@ -63,7 +63,7 @@ ob_start();
         </div>
 
     </nav>
-    <div class="pt-5 core">
+    <div class="pt-5 mb-3 core">
         <div class="page">
 			<?php echo $data->content; ?>
             <div class="footer">

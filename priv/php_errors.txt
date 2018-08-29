@@ -233,3 +233,15 @@
 [29-Aug-2018 11:27:19 UTC] PHP Notice:  Use of undefined constant select_woman - assumed 'select_woman' in C:\data\programs\wamp64\www\www\silk\women.php on line 12
 [29-Aug-2018 11:27:19 UTC] PHP Stack trace:
 [29-Aug-2018 11:27:19 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[29-Aug-2018 11:55:01 UTC] PHP Notice:  Use of undefined constant select_lifestyle - assumed 'select_lifestyle' in C:\data\programs\wamp64\www\www\silk\lifestyle.php on line 12
+[29-Aug-2018 11:55:01 UTC] PHP Stack trace:
+[29-Aug-2018 11:55:01 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\lifestyle.php:0
+[29-Aug-2018 11:56:05 UTC] PHP Notice:  Use of undefined constant select_man - assumed 'select_man' in C:\data\programs\wamp64\www\www\silk\men.php on line 12
+[29-Aug-2018 11:56:05 UTC] PHP Stack trace:
+[29-Aug-2018 11:56:05 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\men.php:0
+[29-Aug-2018 11:56:07 UTC] PHP Notice:  Use of undefined constant select_woman - assumed 'select_woman' in C:\data\programs\wamp64\www\www\silk\women.php on line 12
+[29-Aug-2018 11:56:07 UTC] PHP Stack trace:
+[29-Aug-2018 11:56:07 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[29-Aug-2018 11:56:14 UTC] PHP Notice:  Use of undefined constant select_lifestyle - assumed 'select_lifestyle' in C:\data\programs\wamp64\www\www\silk\lifestyle.php on line 12
+[29-Aug-2018 11:56:14 UTC] PHP Stack trace:
+[29-Aug-2018 11:56:14 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\lifestyle.php:0
