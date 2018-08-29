@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="122.0231mm"
+   height="122.02415mm"
+   viewBox="0 0 432.36532 432.36905"
+   id="svg4316"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="facebook-gold.svg">
+  <defs
+     id="defs4318" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="304.29371"
+     inkscape:cy="50.470237"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4321">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-798.10308,-150.46339)">
+    <path
+       style="fill:#ffdf00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="M 23.863281 0 C 10.682032 0 0 10.682032 0 23.863281 L 0 408.50586 C 0 421.68348 10.682032 432.36914 23.863281 432.36914 L 230.94141 432.36914 L 230.94141 264.93359 L 174.5957 264.93359 L 174.5957 199.67969 L 230.94141 199.67969 L 230.94141 151.55859 C 230.94141 95.712347 265.04719 65.304688 314.86719 65.304688 C 338.72969 65.304688 359.24125 67.08125 365.21875 67.875 L 365.21875 126.23633 L 330.66211 126.25195 C 303.56961 126.25195 298.32617 139.12703 298.32617 158.01953 L 298.32617 199.67969 L 362.94141 199.67969 L 354.52734 264.93359 L 298.32617 264.93359 L 298.32617 432.36914 L 408.50391 432.36914 C 421.67891 432.36914 432.36523 421.68348 432.36523 408.50586 L 432.36523 23.863281 C 432.36523 10.682032 421.67891 0 408.50391 0 L 23.863281 0 z "
+       transform="translate(798.10306,150.46339)"
+       id="path4294" />
+  </g>
+</svg>

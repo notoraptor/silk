@@ -1,5 +1,5 @@
 # DATABASE
-admin_account
+admin
 	admin_id
 	username
 	password
@@ -13,9 +13,9 @@ configuration
 	site_email
 model
 	model_id
+	in_lifestyle: true | false
 	instagram_link
 	sex: male | female
-	in_lifestyle: true | false
 	first_name
 	last_name
 	address
@@ -26,27 +26,31 @@ model
 	shoes
 	hair
 	eyes
+	date_added
 model_photo
 	model_id
-	photo_file_name
-	photo_rank
+	photo_1
+	photo_2
+	photo_3
+	photo_4
 
 # FILE SYSTEM
 data/
+	main/
 	model/
 		[model_id]/
 			[photos ...]
 silkadmin/
-index.php
-men.php
-women.php
-lifestyle.php
-submission.php
-about.php
+*about.php
 favourites.php
+**index.php
+**lifestyle.php
+**men.php
 model.php
-portfolio.php
 portfolio-print.php
+portfolio.php
+*submission.php
+**women.php
 
 # SESSION
 favourite_models: [model ID]

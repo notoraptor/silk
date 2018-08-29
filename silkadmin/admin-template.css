@@ -1,0 +1,364 @@
+.contact textarea, .configuration textarea {
+	width:500px;
+}
+/*Style général pour les éléments.*/
+body {
+	margin:0;
+	padding:0;
+	border: 26px solid rgb(0,0,50);
+	position:absolute;
+	width:100%;
+	min-height:100%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	background-color:rgb(220,220,245);
+	/*
+	*/
+}
+ul {
+	list-style-type:square;
+	list-style-type:none;
+}
+form {
+	margin-bottom:10px;
+}
+fieldset, table td {
+	background-color:rgb(240,240,255);
+}
+fieldset {
+	border:none;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+fieldset legend, h1, h2 {
+	font-family: StrongFont;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight:900;
+}
+fieldset legend, table th {
+	background-color: rgb(200,200,255);
+}
+h1 {
+	padding: 5px;
+	margin-top:0;
+}
+h1, h2 {
+	font-style:italic;
+}
+fieldset legend {
+	width:100%;
+	text-transform:uppercase;
+	text-align:center;
+	margin:0;
+	padding:5px 0 5px 0;
+}
+form input[type="url"] {
+	width:100%;
+}
+form input[type="submit"] {
+	font-family: Verdana, Geneva, sans-serif;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size: 1.1rem;
+	padding:5px 12px 5px 12px;
+	display:block;
+	width:100%;
+}
+fieldset > p {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+fieldset > div.table {
+	width:100%;
+	margin-top: 10px;
+	margin-bottom:10px;
+}
+fieldset > .table .cell {
+	width:50%;
+	padding:5px 10px 5px 10px;
+}
+fieldset > .table .name {
+	text-align:right;
+}
+a {
+	color:black;
+}
+a:hover {
+	color: gold;
+	text-decoration:none;
+}
+table {
+	width:100%;
+}
+table th, table td {
+	text-align:center;
+	padding: 5px;
+}
+form div.cell label {
+	font-weight: bold;
+	padding-right: 10px;
+}
+form div.cell {
+	padding-bottom:10px;
+}
+
+/*Style général pour les classes.*/
+.required {
+	font-weight:bold;
+	color:red;
+}
+.killvideo {
+	width:100%;
+	height:100%;
+}
+
+div.page {
+	padding:10px 10px 10px 10px;
+}
+div.table {
+	display:table;
+}
+div.row {
+	display:table-row;
+}
+div.cell {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+div.gallery {
+	width:100%;
+}
+div.gallery > .cell {
+	width:50%;
+	vertical-align:top;
+	border:2px solid transparent;
+	position:relative;
+	background-color:rgb(240,240,255);
+}
+div.gallery .view form fieldset .content {
+	padding:10px;
+}
+div.gallery .view .photos,
+div.gallery .view .videos {
+	border:1px solid rgb(120,120,195);
+	background-color: rgb(150,150,175);
+	max-height: 300px;
+	overflow:auto;
+	text-align:center;
+}
+div.gallery .view .photos {
+	line-height:0;
+}
+div.gallery .view .photos label {
+	display:inline-block;
+	margin:2px;
+	padding:5px;
+	background-color:rgb(250,250,250);
+	border:1px solid rgb(240,240,240);
+}
+div.gallery .view .photos label .photo {
+	width:200px;
+	height:200px;
+	background-color:rgb(245,245,245);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+div.gallery .view .photos label .selector {
+	width:200px;
+	padding-top: 5px;
+	text-align:center;
+}
+
+div.gallery .view .photos .photoToSelect,
+div.gallery .view .photos .photoSelected {
+	display:inline-block;
+	margin:2px;
+	padding:5px;
+	cursor:pointer;
+}
+div.gallery .view .photos .photoToSelect div,
+div.gallery .view .photos .photoSelected div {
+	width:200px;
+	height:200px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+div.gallery .view .videos .videoToSelect,
+div.gallery .view .videos .videoSelected {
+	display:inline-block;
+	margin:2px;
+	padding:5px;
+}
+div.gallery .view .photos .photoToSelect,
+div.gallery .view .videos .videoToSelect {
+	background-color:rgb(250,250,250);
+	border:1px solid rgb(240,240,240);
+}
+div.gallery .view .photos .photoSelected,
+div.gallery .view .videos .videoSelected {
+	background-color:rgb(245,0,0);
+	border:1px solid rgb(235,0,0);
+}
+div.gallery .view .photos .photoToSelect div,
+div.gallery .view .videos .videoToSelect div {
+	background-color:rgb(245,245,245);
+}
+div.gallery .view .photos .photoSelected div ,
+div.gallery .view .videos .videoSelected div {
+	background-color:rgb(255,0,0);
+}
+
+.help {
+	display:block;
+	font-size:0.7rem;
+}
+
+.modelEdition fieldset .table {
+	display:block;
+	text-align:justify;
+}
+.modelEdition fieldset .row {
+	display:inline-block;
+	vertical-align:top;
+	width:24%;
+	min-width:200px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	padding:10px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	position:relative;
+	background-color: rgb(255,255,255);
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border: 1px solid rgb(220,220,245);
+}
+.modelEdition fieldset .row .cell {
+	display:block;
+	width:100%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align:left;
+}
+.modelEdition fieldset .date {
+	/*
+	white-space:nowrap;
+	*/
+}
+.modelEdition fieldset input[type="text"],
+.modelEdition fieldset input[type="url"],
+.modelEdition fieldset textarea {
+	width:100%;
+}
+.modelEdition fieldset .table input[value],
+.modelEdition fieldset .table textarea.inputed {
+	background-color:rgb(192, 238, 192);
+	border-width:1px;
+}
+
+.breadcumbs {
+	width:100%;
+	margin-bottom:10px;
+	border: 1px solid rgb(220,220,245);
+	padding:10px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	background-color:rgb(240,240,255);
+}
+.breadcumbs img {
+	max-width:200px;
+	max-height:200px;
+	border: 1px solid rgb(245,245,245);
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	display:block;
+	margin:auto;
+}
+.breadcumbs .cell {
+	vertical-align:top;
+}
+.breadcumbs .main {
+}
+.breadcumbs .photo {
+	width:200px;
+	height:200px;
+}
+
+.models {
+	max-height:400px;
+	overflow:auto;
+	border:1px solid rgb(120,120,195);
+	background-color: rgb(150,150,175);
+}
+.models .model {
+	display:inline-block;
+	vertical-align:top;
+	margin:2px;
+	padding:5px;
+	background-color:rgb(250,250,250);
+	border:1px solid rgb(240,240,240);
+}
+.models .model .profilePhoto {
+	width:200px;
+	height:200px;
+	background-color:rgb(245,245,245);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position:center center;
+}
+.models .model .profilePhoto a {
+	display:block;
+	width:100%;
+	height:100%;
+}
+.models .model .editionLinks {
+	width:190px;
+	padding: 5px 5px 5px 5px;
+	text-align:center;
+}
+.models .instalink {
+	padding:4px;
+	background-color:rgb(230,255,200);
+	display:inline-block;
+}
+.models .instalink:hover {
+	background-color:rgb(200,225,170);
+}
+.models .instalink img {
+	width:12px;
+	height:12px;
+	display:block;
+}
+
+.messages .error, .messages .attention, .messages .success {
+	padding: 10px;
+	border: 2px solid black;
+	font-style: italic;
+	font-weight:bold;
+}
+.messages .error {
+	background-color: rgb(255,240,240);
+	border-color: rgb(245,225,225);
+}
+.messages .attention {
+	background-color: rgb(255,255,220);
+	border-color: rgb(245,255,225);
+}
+.messages .success {
+	background-color: rgb(240,255,240);
+	border-color: rgb(235,245,235);
+}

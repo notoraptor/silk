@@ -1,0 +1,28 @@
+@font-face {
+	font-family: LightFont;
+	src: url('futura-standard-light.eot');
+	src: url('futura-standard-light.eot?#iefix') format('embedded-opentype'),
+		 url('futura-standard-light.ttf')  format('truetype');
+}
+@font-face {
+	font-family: Font;
+	src: url('futura-standard-medium.eot');
+	src: url('futura-standard-medium.eot?#iefix') format('embedded-opentype'),
+		 url('futura-standard-medium.ttf')  format('truetype'),
+		 url('futura-standard-medium.woff') format('woff');
+}
+@font-face {
+	font-family: StrongFont;
+	src: url('futura-extra-bold.eot');
+	src: url('futura-extra-bold.eot?#iefix') format('embedded-opentype'),
+		 url('futura-extra-bold.ttf')  format('truetype');
+}
+
+/** Style général. **/
+
+body {
+	font-family: Font;
+}
+.hoverable {
+	cursor:pointer;
+}

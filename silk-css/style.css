@@ -1,0 +1,19 @@
+.model {
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 100%;
+}
+.model .details {
+    text-align: center;
+    font-size: 0.75rem;
+}
+.model .name {
+    font-size: 1rem;
+}
+.model .instagram img {
+    height: 1rem;
+}
+.model .heart {
+    font-weight: bold;
+    font-size: 1.5rem;
+}

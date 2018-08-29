@@ -1,0 +1,15 @@
+a {
+    color: black;
+}
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+#page-title {
+    text-align: center;
+}
+#line-1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
