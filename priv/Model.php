@@ -42,27 +42,26 @@ class Model {
 		if($sexe == 'femme') {
 			// femme
 			$titles = array(
-				'hauteur' => 'HEIGHT',
-				'taille_poitrine' => 'BUST',
-				'taille' => 'WAIST',
-				'taille_hanches' => 'HIPS',
-				'taille_chaussures' => 'SHOES',
-				'couleur_cheveux' => 'HAIR',
-				'couleur_yeux' => 'EYES'
+				'height' => 'HEIGHT',
+				'bust' => 'BUST',
+				'waist' => 'WAIST',
+				'hips' => 'HIPS',
+				'shoes' => 'SHOES',
+				'hair' => 'HAIR',
+				'eyes' => 'EYES'
 			);
-			$order = array('hauteur', 'taille_poitrine', 'taille', 'taille_hanches', 'taille_chaussures', 'couleur_cheveux', 'couleur_yeux');
+			$order = array('height', 'bust', 'waist', 'hips', 'shoes', 'hair', 'eyes');
 		} else {
 			// homme
 			/* height, suit, waist, shoe, hair, eyes */
 			$titles = array(
-				'hauteur' => 'HEIGHT',
-				'taille_veston' => 'SUIT',
-				'taille' => 'WAIST',
-				'taille_chaussures' => 'SHOES',
-				'couleur_cheveux' => 'HAIR',
-				'couleur_yeux' => 'EYES'
+				'height' => 'HEIGHT',
+				'waist' => 'WAIST',
+				'shoes' => 'SHOES',
+				'hair' => 'HAIR',
+				'eyes' => 'EYES'
 			);
-			$order = array('hauteur', 'taille_veston', 'taille', 'taille_chaussures', 'couleur_cheveux', 'couleur_yeux');
+			$order = array('height', 'waist', 'shoes', 'hair', 'eyes');
 		}
 		return array('titles' => $titles, 'order' => $order);
 	}

@@ -516,15 +516,17 @@ function utils_microtime() {
 
 function utils_upload($name, $updir) {
 	// Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+	$nom = '';
+	$erreur = '';
 	if (isset($_FILES[$name]) AND $_FILES[$name]['error'] == UPLOAD_ERR_OK) {
 		// Testons si le fichier n'est pas trop gros.
-		$tailleMaximale = 64*1024*1024; // 64 Mo.
+		$tailleMaximale = 2*1024*1024; // 64 Mo.
 		if ($_FILES[$name]['size'] <= $tailleMaximale) {
 			// Testons si l'extension est autorisée
 			$infosfichier = pathinfo($_FILES[$name]['name']);
 			$extension_upload = "";
 			if(isset($infosfichier['extension'])) $extension_upload = strtolower($infosfichier['extension']);
-			$extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'tif', 'bmp');
+			$extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'tif' , 'tiff', 'bmp', 'pdf', 'doc', 'docx', 'rtf', 'odt');
 			if (in_array($extension_upload, $extensions_autorisees)) {
 				// On peut valider le fichier et le stocker définitivement
 				if($extension_upload == 'jpeg')	$extension_upload = 'jpg';
@@ -532,13 +534,12 @@ function utils_upload($name, $updir) {
 				if($extension_upload != '') $extension_upload = '.'.$extension_upload;
 				$time = utils_microtime();
 				$nom = $updir.'/'.$time.$extension_upload;
-				if(move_uploaded_file($_FILES[$name]['tmp_name'], $nom))
-					return $nom; //return str_replace(server_dir().'/','',$nom);
-				else return false;
-			} else utils_message_add_error( "Erreur lors de l'envoi de fichier : extension (.".$extension_upload.") non autoris&eacute;e.<br/>".( empty($extensions_autorisees) ? "" : "Les fichiers accept&eacute;s doivent avoir une des extensions suivantes :<br/>.".implode(', .',$extensions_autorisees)."<br/>" ).( empty($extensions_interdites) ? "" : "Les extensions suivantes sont refus&eacute;es :<br/>.".implode(', .', $extensions_interdites) ) );
-		} else utils_message_add_error("Votre fichier est trop gros (".($tailleMaximale/1024/1024)." Mo au maximum).");
-	} else utils_message_add_error("Erreur ".$_FILES[$name]['error']." lors de l'envoi de fichier : champ ($name) inexistant.");
-	return false;
+				if(!move_uploaded_file($_FILES[$name]['tmp_name'], $nom))
+					$erreur = 'Unable to save file. Please re-try later!';
+			} else $erreur = "Disalloed file extension (.".$extension_upload.") ".( empty($extensions_autorisees) ? "" : "Allowed extensions: .".implode(', .',$extensions_autorisees));
+		} else $erreur = ("Fils is too big (expected at most ".($tailleMaximale/1024/1024)." Mb).");
+	} else $erreur = ("Error ".$_FILES[$name]['error'].": missing file field ($name).");
+	return array('file' => $nom, 'error' => $erreur);
 }
 function utils_upload_compcard($model_id) {
 	$name = 'compcard';
@@ -634,6 +635,40 @@ function get_nb_followers($instagram_username) {
 		}
 	}
 	return false;
+}
+
+function utils_ensure_favourites() {
+	if (!isset($_SESSION['favourites']))
+		$_SESSION['favourites'] = array();
+}
+function utils_has_favourite($id) {
+	utils_ensure_favourites();
+	return array_key_exists($id, $_SESSION['favourites']);
+}
+function utils_count_favourites() {
+	utils_ensure_favourites();
+	return count($_SESSION['favourites']);
+}
+function utils_add_favourite($id) {
+	utils_ensure_favourites();
+	$_SESSION['favourites'][$id] = null;
+}
+function utils_remove_favourite($id) {
+	if (utils_has_favourite($id))
+		unset($_SESSION['favourites'][$id]);
+}
+
+function utils_mail($mail, $subject, $message) {
+	$serveur = server_http();
+	$headers = "Return-Path: ".$mail."\n";
+	$headers .= "X-Mailer: PHP ".phpversion()."\n";
+	// $headers .= "Reply-To: ".$mail."\n";
+	$headers .= "Organization: SILK MANAGEMENT"."\n";
+	$headers .= "X-Priority: 3 (Normal)"."\n";
+	$headers .= "Mime-Version: 1.0"."\n";
+	$headers .= "Content-Transfer-Encoding: 8bit"."\n";
+	$headers .='Content-Type: text/html; charset="iso-8859-1"'."\n";
+	return mail($mail, $subject, $message, $headers);
 }
 
 ?>

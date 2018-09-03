@@ -1,3 +1,15 @@
+.message-error {
+    color: red;
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+.message-success {
+    color: green;
+    border: 1px solid green;
+    border-radius: 0.25rem;
+}
+
 .model {
     border: 1px solid lightgray;
     width: 100%;
@@ -31,4 +43,73 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/** model.php, portfolio.php **/
+
+#model #content, #portfolio #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#model .title-bar, #portfolio .title-bar {
+    font-weight: bold;
+}
+
+#model .model-name, #portfolio .model-name {
+    font-size: 1.5rem;
+}
+
+#model .close-button, #portfolio .close-button {
+    font-size: 2rem;
+    color: gray;
+    text-align: right;
+ }
+
+#model .model-details {
+    text-align: right;
+    font-weight: bold;
+}
+
+#model .detail-title {
+    color: rgb(170, 170, 170);
+}
+
+#model .detail-value {
+    font-size: 1.5rem;
+}
+
+#model .model-buttons {
+    text-align: center;
+}
+
+#model #diaporama .caption {
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+}
+
+#model #diaporama .image, #portfolio .images .image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#portfolio .images {
+    white-space: nowrap;
+    font-size: 0;
+}
+
+#portfolio .images .image {
+    display: inline-block;
+}
+
+#portfolio-print .model-name, #portfolio-print .model-details {
+    text-align: center;
+}
+#portfolio-print .model-name {
+    font-weight: bold;
+    font-size: 1.5rem;
 }

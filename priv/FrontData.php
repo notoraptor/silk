@@ -55,7 +55,7 @@ class FrontData extends Data {
 		echo $html.$plus;
 	}
 	public function getMetaDescription($model, $extension = '') {
-		$meta_description = $model->prenom . ' | Kill Management model' . ($extension ? ' '.$extension : '');
+		$meta_description = $model->first_name . ' ' . $model->last_name . ' | Silk Management model' . ($extension ? ', '.$extension : '');
 		$details = $model->getDetails();
 		$titles = $details['titles'];
 		$keys = $details['order'];

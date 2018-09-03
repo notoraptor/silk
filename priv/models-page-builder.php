@@ -5,7 +5,7 @@
  * Date: 29/08/2018
  * Time: 06:33
  */
-function print_model_card($models, $index) {
+function print_model_card($models, $index, $pagename) {
 	$html = '';
 	capture_start();
 	if ($index < count($models)) {
@@ -14,11 +14,17 @@ function print_model_card($models, $index) {
 		<div class="model">
 			<div class="row">
 				<div class="col align-self-center">
-                    <img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo)['url'];?>"/>
+                    <a href="model.php?origin=<?php echo $pagename;?>&id=<?php echo $model->model_id;?>">
+                        <img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo)['url'];?>"/>
+                    </a>
 				</div>
 				<div class="col">
 					<div class="details">
-						<div class="name"><?php echo $model->first_name.' '.$model->last_name;?></div>
+						<div class="name">
+                            <a href="model.php?origin=<?php echo $pagename;?>&id=<?php echo $model->model_id;?>">
+                                <?php echo $model->first_name.' '.$model->last_name;?>
+                            </a>
+                        </div>
 						<div class="detail"><span class="key">Height:</span> <span class="value"><?php echo $model->height;?></span></div>
 						<div class="detail"><span class="key">Waist:</span> <span class="value"><?php echo $model->waist;?></span></div>
 						<div class="detail"><span class="key">Bust:</span> <span class="value"><?php echo $model->bust;?></span></div>
@@ -37,7 +43,11 @@ function print_model_card($models, $index) {
 										<div class="followers"><?php echo get_nb_followers($model->instagram_link);?></div>
 									</div>
 									<div class="col">
-										<div class="heart">&hearts;</div>
+										<div class="heart">
+                                            <a href="favourites.php?action=add&from=<?php echo $pagename;?>&id=<?php echo $model->model_id;?>">
+                                            &hearts;
+                                            </a>
+                                        </div>
 									</div>
 								</div>
 								<?php
@@ -61,7 +71,7 @@ function print_model_card($models, $index) {
 		'next' => $index + 1
 	);
 }
-function print_models($models, $select_fn) {
+function print_models($models, $select_fn, $pagename) {
 	$html_models = '';
 	$selected_models = array();
 	foreach($models as $model) if ($model->photo && $select_fn($model)) $selected_models[] = $model;
@@ -78,21 +88,21 @@ function print_models($models, $select_fn) {
 				<div class="row mt-3">
 					<div class="col">
 						<?php
-						$res = print_model_card($selected_models, $index_model);
+						$res = print_model_card($selected_models, $index_model, $pagename);
 						$index_model = $res['next'];
 						echo $res['html'];
 						?>
 					</div>
 					<div class="col">
 						<?php
-						$res = print_model_card($selected_models, $index_model);
+						$res = print_model_card($selected_models, $index_model, $pagename);
 						$index_model = $res['next'];
 						echo $res['html'];
 						?>
 					</div>
 					<div class="col">
 						<?php
-						$res = print_model_card($selected_models, $index_model);
+						$res = print_model_card($selected_models, $index_model, $pagename);
 						$index_model = $res['next'];
 						echo $res['html'];
 						?>

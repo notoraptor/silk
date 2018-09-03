@@ -12,8 +12,9 @@ if ($data->meta_keywords == '') {
 $count = count($data->models);
 $menu_titles = array('MEN', 'WOMEN', 'LIFESTYLE', 'SUBMISSION', 'ABOUT');
 $menu_names = array('men', 'women', 'lifestyle', 'submission', 'about');
-if (isset($_SESSION['favourites']) && !empty($_SESSION['favourites'])) {
-	$menu_titles[] = 'FAVOURITES';
+$count_favourites = utils_count_favourites();
+if ($count_favourites) {
+	$menu_titles[] = 'FAVOURITES ('.$count_favourites.')';
 	$menu_names[] = 'favourites';
 }
 $count_menu = count($menu_titles);
