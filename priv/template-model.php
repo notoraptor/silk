@@ -24,9 +24,8 @@ ob_start();
     <title><?php echo $data->title; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="data/main/favicon.ico"/><!-- TODO favicon -->
     <link rel="icon" type="image/x-icon" href="data/main/favicon.ico"/>
-    <link rel="stylesheet" href="silk-css/bootstrap.css"/>
-    <link rel="stylesheet" href="silk-css/style.css"/>
-    <link rel="stylesheet" href="silk-css/template.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 	<?php if ($data->head != '') echo $data->head; ?>
 </head>
 <body <?php if ($data->pagename != '') echo 'id="' . $data->pagename . '"'; ?>>
@@ -95,9 +94,9 @@ ob_start();
         </div>
     </div>
 </div>
-<script type="text/javascript" src="silk-js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="silk-js/popper.min.js"></script>
-<script type="text/javascript" src="silk-js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <?php if ($data->scripts != '') echo $data->scripts; ?>
 <script type="text/javascript"><!--
     let indexPhoto = 0;

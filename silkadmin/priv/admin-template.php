@@ -7,8 +7,7 @@ ob_start();?><!DOCTYPE html>
 		<meta charset="UTF-8"/>
 		<link rel="shortcut icon" type="image/x-icon" href="../data/main/favicon.ico" />
 		<link rel="icon" type="image/x-icon" href="../data/main/favicon.ico"/>
-		<link rel="stylesheet" href="../css/style.css"/>
-		<link rel="stylesheet" href="admin-template.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 	</head>
 	<body>
 	<div class="page">

@@ -1,28 +1,179 @@
+/* font converted using font-converter.net. thank you! */
 @font-face {
-	font-family: LightFont;
-	src: url('futura-standard-light.eot');
-	src: url('futura-standard-light.eot?#iefix') format('embedded-opentype'),
-		 url('futura-standard-light.ttf')  format('truetype');
-}
-@font-face {
-	font-family: Font;
-	src: url('futura-standard-medium.eot');
-	src: url('futura-standard-medium.eot?#iefix') format('embedded-opentype'),
-		 url('futura-standard-medium.ttf')  format('truetype'),
-		 url('futura-standard-medium.woff') format('woff');
-}
-@font-face {
-	font-family: StrongFont;
-	src: url('futura-extra-bold.eot');
-	src: url('futura-extra-bold.eot?#iefix') format('embedded-opentype'),
-		 url('futura-extra-bold.ttf')  format('truetype');
+    font-family: "Bebas";
+    src: url("./fonts/BEBAS.eot"); /* IE9 Compat Modes */
+    src: url("./fonts/BEBAS.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/BEBAS.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/BEBAS.svg") format("svg"), /* Legacy iOS */
+    url("BEBAS.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/BEBAS.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/BEBAS.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
 }
 
-/** Style général. **/
+/** Template. **/
 
 body {
-	font-family: Font;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.hoverable {
-	cursor:pointer;
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+#page-title {
+    text-align: center;
+}
+
+#line-1 {
+    font-family: Bebas;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 4rem;
+}
+
+/** Specific pages. **/
+
+.message-error {
+    color: red;
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+.message-success {
+    color: green;
+    border: 1px solid green;
+    border-radius: 0.25rem;
+}
+
+.model-wrapper {
+    position: relative;
+}
+
+.model {
+    border: 1px solid #C1C1C1;
+}
+
+@media (min-width: 992px) {
+    .model-wrapper:after {
+        padding-top: 72.72%;
+        display: block;
+        content: '';
+    }
+    .model {
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+    }
+}
+
+.model .details {
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.model .name {
+    font-size: 0.95rem;
+}
+
+img.instagram {
+    height: 1rem;
+}
+
+.model .heart {
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+#homeVideo {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+#homeVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/** model.php, portfolio.php **/
+
+#model #content, #portfolio #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#model .title-bar, #portfolio .title-bar {
+    font-weight: bold;
+}
+
+#model .model-name, #portfolio .model-name {
+    font-size: 1.5rem;
+}
+
+#model .close-button, #portfolio .close-button {
+    font-size: 2rem;
+    color: gray;
+    text-align: right;
+}
+
+#model .model-details {
+    text-align: right;
+    font-weight: bold;
+}
+
+#model .detail-title {
+    color: rgb(170, 170, 170);
+}
+
+#model .detail-value {
+    font-size: 1.5rem;
+}
+
+#model .model-buttons {
+    text-align: center;
+}
+
+#model #diaporama .caption {
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+}
+
+#model #diaporama .image, #portfolio .images .image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#portfolio .images {
+    white-space: nowrap;
+    font-size: 0;
+}
+
+#portfolio .images .image {
+    display: inline-block;
+}
+
+#portfolio-print .model-name, #portfolio-print .model-details {
+    text-align: center;
+}
+
+#portfolio-print .model-name {
+    font-weight: bold;
+    font-size: 1.5rem;
 }

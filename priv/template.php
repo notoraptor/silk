@@ -30,16 +30,15 @@ ob_start();
     <title><?php echo $data->title; ?></title>
     <link rel="shortcut icon" type="image/x-icon" href="data/main/favicon.ico"/><!-- TODO favicon -->
     <link rel="icon" type="image/x-icon" href="data/main/favicon.ico"/>
-    <link rel="stylesheet" href="silk-css/bootstrap.css"/>
-    <link rel="stylesheet" href="silk-css/style.css"/>
-    <link rel="stylesheet" href="silk-css/template.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 	<?php if ($data->head != '') echo $data->head; ?>
 </head>
 <body <?php if ($data->pagename != '') echo 'id="' . $data->pagename . '"'; ?>>
 <?php if ($data->messages != '') { ?>
     <div class="messages"><?php echo $data->messages; ?></div><?php } ?>
 <div id="content" class="container">
-    <div id="page-title" class="mb-4">
+    <div id="page-title" class="mt-3 mb-4">
         <div id="line-1">
 			<?php if ($data->pagename != 'home') { ?><a href="index.php"><?php } ?>
                 SILK
@@ -47,35 +46,30 @@ ob_start();
         </div>
         <div id="line-2">MANAGEMENT</div>
     </div>
-    <nav class="navbar navbar-expand-lg mb-5 menu-bar">
-        <div class="navbar-nav mx-auto">
-			<?php for ($i = 0; $i < $count_menu; ++$i) {
-				$menu_title = $menu_titles[$i];
-				$menu_name = $menu_names[$i];
-				?>
-                <div class="navbar-brand mx-5 menu">
-					<?php if ($data->pagename != $menu_name) { ?>
-                    <a <?php echo 'href="' . $menu_name . '.php"'; ?>><?php } ?>
-						<?php echo $menu_title; ?>
-						<?php if ($data->pagename != $menu_name) { ?></a><?php } ?>
-                </div>
-				<?php
-			} ?>
-        </div>
-
-    </nav>
-    <div class="pt-5 mb-3 core">
-        <div class="page">
-			<?php echo $data->content; ?>
-            <div class="footer">
-                <a id="footer" href="#page" onclick="backTop('content'); return false;">/BACK TO TOP</a>
+    <nav class="nav flex-column flex-sm-row menu-bar">
+		<?php for ($i = 0; $i < $count_menu; ++$i) {
+			$menu_title = $menu_titles[$i];
+			$menu_name = $menu_names[$i];
+			?>
+            <div class="flex-sm-fill text-sm-center nav-item nav-link menu">
+				<?php if ($data->pagename != $menu_name) { ?>
+                <a href="<?php echo $menu_name.'.php'; ?>"><?php } ?>
+					<?php echo $menu_title; ?>
+					<?php if ($data->pagename != $menu_name) { ?></a><?php } ?>
             </div>
+			<?php
+		} ?>
+    </nav>
+    <div class="mt-5 mb-3 page">
+		<?php echo $data->content; ?>
+        <div class="footer">
+            <a id="footer" href="#page" onclick="backTop('content'); return false;">/BACK TO TOP</a>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="silk-js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="silk-js/popper.min.js"></script>
-<script type="text/javascript" src="silk-js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 <?php if ($data->scripts != '') echo $data->scripts; ?>
 <script type="text/javascript" src="js/AnimateScroll.min.js"></script>
 <script type="text/javascript"><!--
