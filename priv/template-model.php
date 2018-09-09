@@ -36,9 +36,9 @@ ob_start();
     </div>
     <div class="row align-items-center flex-grow-1">
         <div class="col-sm model-buttons">
-            <a href="portfolio.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>">PORTFOLIO</a>
-            <a class="ml-5" href="favourites.php?origin=<?php echo $origin;?>&action=<?php echo ($in_favourites ? 'remove' : 'add');?>&id=<?php echo $model->model_id;?>"><?php echo ($in_favourites ? '-' : '+'); ?> FAVOURITES</a>
-            <a class="ml-5" href="portfolio-print.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>">PRINT</a>
+            <a class="link-portfolio" href="portfolio.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>">PORTFOLIO</a>
+            <a class="ml-5 link-favourites" href="favourites.php?origin=<?php echo $origin;?>&action=<?php echo ($in_favourites ? 'remove' : 'add');?>&id=<?php echo $model->model_id;?>"><?php echo ($in_favourites ? '-' : '+'); ?> FAVOURITES</a>
+            <a class="ml-5 link-print" href="portfolio-print.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>"><span class="down-arrow">&darr;</span> PRINT</a>
         </div>
         <div class="col-sm-1 model-details">
             <?php
@@ -48,7 +48,7 @@ ob_start();
                     $detail_name = $detail_names[$i];
                     $detail_title = $detail_titles[$i];
                     ?>
-                    <div class="detail">
+                    <div class="detail my-2">
                         <div class="detail-title"><?php echo $detail_title;?></div>
                         <div class="detail-value"><?php echo $model->$detail_name;?></div>
                     </div>
@@ -73,8 +73,8 @@ ob_start();
                                 <div class="image w-100 flex-grow-1"
                                      style="background-image: url('<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>'); width:100px; height:100px;">
                                 </div>
-                                <div class="caption">
-                                    0<?php echo ($i + 1);?>/0<?php echo count($photo_indices);?><br/><br/>
+                                <div class="caption pt-2 pr-3">
+                                    0<?php echo ($i + 1);?> / 0<?php echo count($photo_indices);?><br/><br/>
                                 </div>
                             </div>
                         </div>

@@ -48,7 +48,7 @@ ob_start();
             <img class="img-fluid w-50" src="<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>"/>
             -->
                 <div class="w-50 h-100 image"
-                     style="background-image: url('<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>'); background-color: green;">
+                     style="background-image: url('<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>'); background-color: #1b1e21;">
                 </div>
 				<?php
 			}

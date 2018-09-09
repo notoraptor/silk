@@ -12,6 +12,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Calluna-Regular';
+    src: url('./fonts/Calluna-Regular-webfont.woff2') format('woff2'),
+    url('./fonts/Calluna-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /** Template. **/
 
 body {
@@ -117,38 +126,55 @@ img.instagram {
 }
 
 #model .title-bar, #portfolio .title-bar {
-    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
 }
 
 #model .model-name, #portfolio .model-name {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 #model .close-button, #portfolio .close-button {
-    font-size: 2rem;
-    color: gray;
     text-align: right;
+}
+#model .close-button a, #portfolio .close-button a {
+    font-size: 2.5rem;
+    color: gray;
 }
 
 #model .model-details {
     text-align: right;
-    font-weight: bold;
 }
 
 #model .detail-title {
-    color: rgb(170, 170, 170);
+    color: #929292;
+    font-weight: bolder;
+    font-size: 0.80rem;
 }
 
 #model .detail-value {
-    font-size: 1.5rem;
+    font-family: Calluna-Regular;
+    font-size: 1.25rem;
 }
 
 #model .model-buttons {
     text-align: center;
+    font-weight: bold;
+}
+
+#model .model-buttons a {
+    color: #9E9E9E;
+}
+
+#model .model-buttons a.link-portfolio {
+    color: #606060;
+}
+
+#model .model-buttons a:hover {
+    color: lightgray;
 }
 
 #model #diaporama .caption {
-    color: black;
+    color: #7F7F7F;
     font-weight: bold;
     width: 100%;
     text-align: right;
@@ -159,6 +185,19 @@ img.instagram {
     background-position: center;
     background-size: contain;
 }
+
+#model .carousel-control-prev-icon, #model .carousel-control-next-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+#model .carousel-control-prev-icon {
+    background-image: url("../data/main/left-arrow.svg");
+}
+#model .carousel-control-next-icon {
+    background-image: url("../data/main/right-arrow.svg");
+}
+
 
 #portfolio .images {
     white-space: nowrap;
