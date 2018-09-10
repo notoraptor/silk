@@ -82,7 +82,7 @@ capture_start();
 			</div>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-dark">Send</button>
+			<button type="submit" class="btn btn-dark px-4">Send</button>
 		</div>
 	</fieldset>
 </form>

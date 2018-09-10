@@ -25,11 +25,12 @@ ob_start();
     <link rel="shortcut icon" type="image/x-icon" href="data/main/favicon.ico"/><!-- TODO favicon -->
     <link rel="icon" type="image/x-icon" href="data/main/favicon.ico"/>
     <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" media="print"/>
 	<?php if ($data->head != '') echo $data->head; ?>
 </head>
 <body <?php if ($data->pagename != '') echo 'id="' . $data->pagename . '"'; ?>>
-<div id="content" class="container">
+<div id="content" class="container-fluid d-flex flex-column">
     <div id="page-title" class="mb-4">
         <div id="line-1">
 			<?php if ($data->pagename != 'home') { ?><a href="index.php"><?php } ?>
@@ -38,29 +39,33 @@ ob_start();
         </div>
         <div id="line-2">MANAGEMENT</div>
     </div>
-    <div>
-        <div class="row">
-            <div class="col-sm">
-				<?php if ($model->photo_1) {
-					?><img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo_1)['url'];?>"/><?php
-				} ?>
-            </div>
-            <div class="col-sm">
-				<?php if ($model->photo_2) {
-					?><img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo_2)['url'];?>"/><?php
-				} ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-				<?php if ($model->photo_3) {
-					?><img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo_3)['url'];?>"/><?php
-				} ?>
-            </div>
-            <div class="col-sm">
-				<?php if ($model->photo_4) {
-					?><img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo_4)['url'];?>"/><?php
-				} ?>
+    <div class="row flex-grow-1 d-flex flex-column wrapper">
+        <div class="flex-grow-1 images-wrapper">
+            <div class="images">
+                <div class="line">
+                    <div class="cell">
+						<?php if ($model->photo_1) {
+							?><img src="<?php echo $model->getPhotoByBasename($model->photo_1)['url'];?>"/><?php
+						} ?>
+                    </div>
+                    <div class="cell">
+						<?php if ($model->photo_2) {
+							?><img src="<?php echo $model->getPhotoByBasename($model->photo_2)['url'];?>"/><?php
+						} ?>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="cell">
+						<?php if ($model->photo_3) {
+							?><img src="<?php echo $model->getPhotoByBasename($model->photo_3)['url'];?>"/><?php
+						} ?>
+                    </div>
+                    <div class="cell">
+						<?php if ($model->photo_4) {
+							?><img src="<?php echo $model->getPhotoByBasename($model->photo_4)['url'];?>"/><?php
+						} ?>
+                    </div>
+                </div>
             </div>
         </div>
         <p class="mt-3 model-name"><?php echo $model->first_name.' '.$model->last_name;?></p>

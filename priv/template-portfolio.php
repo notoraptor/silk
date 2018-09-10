@@ -33,8 +33,8 @@ ob_start();
         <div class="col-sm model-name"><?php echo $model->first_name . ' ' . $model->last_name; ?></div>
         <div class="col-sm-1 close-button"><a href="model.php?origin=<?php echo $origin; ?>&id=<?php echo $model->model_id; ?>">&#215;</a></div>
     </div>
-    <div class="row align-items-center flex-grow-1" style="background-color: orange;">
-        <div class="w-100 h-100 images" style="background-color: blue;">
+    <div class="row flex-grow-1 images-wrapper">
+        <div class="images">
 			<?php
 			$photo_indices = array();
 			foreach (array(1, 2, 3, 4) as $photo_rank) {
@@ -44,15 +44,13 @@ ob_start();
 			for ($i = 0; $i < count($photo_indices); ++$i) {
 				$photo_id = $photo_indices[$i];
 				?>
-                <!--
-            <img class="img-fluid w-50" src="<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>"/>
-            -->
-                <div class="w-50 h-100 image"
-                     style="background-image: url('<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>'); background-color: #1b1e21;">
+                <div class="image" style="background-image: url('<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>');">
+                    <img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->$photo_id)['url']; ?>"/>
                 </div>
 				<?php
 			}
-			?></div>
+			?>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

@@ -119,7 +119,7 @@ img.instagram {
 
 /** model.php, portfolio.php **/
 
-#model #content, #portfolio #content {
+#model #content, #portfolio #content, #portfolio-print #content {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -194,25 +194,165 @@ img.instagram {
 #model .carousel-control-prev-icon {
     background-image: url("../data/main/left-arrow.svg");
 }
+
 #model .carousel-control-next-icon {
     background-image: url("../data/main/right-arrow.svg");
 }
 
+@media (max-width: 992px) {
+    #portfolio .images {
+        width: 100%;
+        text-align: center;
+    }
 
-#portfolio .images {
-    white-space: nowrap;
-    font-size: 0;
+    #portfolio .images .image {
+        width: 100%;
+        background-image: none;
+    }
 }
 
-#portfolio .images .image {
-    display: inline-block;
+@media (min-width: 992px) {
+    #portfolio .images-wrapper {
+        overflow: auto;
+    }
+
+    #portfolio .images {
+        white-space: nowrap;
+        font-size: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #portfolio .image {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        display: inline-block;
+        text-align: center;
+    }
+
+    #portfolio .image img {
+        display: none;
+    }
+
 }
 
-#portfolio-print .model-name, #portfolio-print .model-details {
+#portfolio-print .model-name, #portfolio-print .model-details, #portfolio-print .model-address {
     text-align: center;
 }
 
 #portfolio-print .model-name {
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+#portfolio-print .wrapper {
+    background-color: #533f03;
+}
+
+#portfolio-print .wrapper > * {
+}
+
+#portfolio-print .wrapper .images-wrapper {
+    background-color: yellow;
+    overflow: auto;
+}
+
+#portfolio-print .wrapper .images-wrapper .images {
+    background-color: olivedrab;
+    height: 100%;
+}
+
+
+#portfolio-print .wrapper .images-wrapper .images .line {
+    width: 100%;
+    height: 50%;
+    background-color: #0c5460;
+}
+
+#portfolio-print .wrapper .images-wrapper .images .line:nth-child(odd) {
+    background-color: #20c997;
+}
+
+#portfolio-print .wrapper .images-wrapper .images .line .cell {
+    width: 50%;
+    height: 100%;
+    background-color: #b8daff;
+    float: left;
+}
+
+#portfolio-print .wrapper .images-wrapper .images .line .cell:nth-child(odd) {
+    background-color: cyan;
+}
+
+#portfolio-print .wrapper .images-wrapper .images .line + .line .cell {
+    background-color: #9E9E9E;
+}
+
+#portfolio-print .wrapper .images-wrapper .images .line + .line .cell:nth-child(even) {
+    background-color: yellowgreen;
+}
+
+#portfolio-print .cell img {
+    display: none;
+}
+
+#about .about {
+    font-weight: bold;
+}
+
+#about legend {
+    font-weight: bold;
+}
+
+#about button, #submission button {
+    border-radius: 0; !important;
+    font-weight: bold;
+}
+
+#about input, #about textarea, #submission input, #submission textarea {
+    border: none;
+    border-radius: 0; !important;
+    background-color: #F2F2F2;
+}
+
+@media (min-width: 992px) {
+    #about form {
+        max-width: 60%;
+    }
+}
+
+#submission .submission {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
+
+#submission form {
+    font-size: 0.80rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#submission input, #submission textarea {
+    background-color: #CCCCCC;
+}
+
+#submission form .info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+}
+
+#submission .submit-button {
+    text-align: right;
+}
+
+#submission button {
+    padding: 1rem 4rem 1rem 4rem
+}
+
+#submission .files label {
+    background-color: #CCCCCC;
+    border: none;
+    border-radius: 0; !important;
+    font-size: 0.95rem;
 }

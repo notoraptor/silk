@@ -1,0 +1,89 @@
+[09-Sep-2018 23:50:37 UTC] PHP Notice:  Undefined variable: photo_indices in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:37 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:37 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:37 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:37 UTC] PHP Warning:  implode(): Invalid arguments passed in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:37 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:37 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:37 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:37 UTC] PHP   3. implode() C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php:45
+[09-Sep-2018 23:50:46 UTC] PHP Notice:  Undefined variable: photo_indices in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:46 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:46 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:46 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:46 UTC] PHP Warning:  implode(): Invalid arguments passed in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:46 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:46 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:46 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:46 UTC] PHP   3. implode() C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php:45
+[09-Sep-2018 23:50:49 UTC] PHP Notice:  Undefined variable: photo_indices in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:49 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:49 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:49 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:49 UTC] PHP Warning:  implode(): Invalid arguments passed in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:49 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:49 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:49 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:49 UTC] PHP   3. implode() C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php:45
+[09-Sep-2018 23:50:53 UTC] PHP Notice:  Undefined variable: photo_indices in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:53 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:53 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:53 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:53 UTC] PHP Warning:  implode(): Invalid arguments passed in C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php on line 45
+[09-Sep-2018 23:50:53 UTC] PHP Stack trace:
+[09-Sep-2018 23:50:53 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\portfolio.php:0
+[09-Sep-2018 23:50:53 UTC] PHP   2. template() C:\data\programs\wamp64\www\www\silk\portfolio.php:17
+[09-Sep-2018 23:50:53 UTC] PHP   3. implode() C:\data\programs\wamp64\www\www\silk\priv\template-portfolio.php:45
+[10-Sep-2018 10:01:57 UTC] PHP Warning:  file_get_contents(https://www.instapi.io/u/killmanagement): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in C:\data\programs\wamp64\www\www\silk\priv\utils.php on line 624
+[10-Sep-2018 10:01:57 UTC] PHP Stack trace:
+[10-Sep-2018 10:01:57 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[10-Sep-2018 10:01:57 UTC] PHP   2. print_models() C:\data\programs\wamp64\www\www\silk\women.php:12
+[10-Sep-2018 10:01:57 UTC] PHP   3. print_model_card() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:103
+[10-Sep-2018 10:01:57 UTC] PHP   4. get_nb_followers() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:54
+[10-Sep-2018 10:01:57 UTC] PHP   5. file_get_contents() C:\data\programs\wamp64\www\www\silk\priv\utils.php:624
+[10-Sep-2018 10:01:58 UTC] PHP Warning:  file_get_contents(https://www.instapi.io/u/fcbarcelona): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in C:\data\programs\wamp64\www\www\silk\priv\utils.php on line 624
+[10-Sep-2018 10:01:58 UTC] PHP Stack trace:
+[10-Sep-2018 10:01:58 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[10-Sep-2018 10:01:58 UTC] PHP   2. print_models() C:\data\programs\wamp64\www\www\silk\women.php:12
+[10-Sep-2018 10:01:58 UTC] PHP   3. print_model_card() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:103
+[10-Sep-2018 10:01:58 UTC] PHP   4. get_nb_followers() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:54
+[10-Sep-2018 10:01:58 UTC] PHP   5. file_get_contents() C:\data\programs\wamp64\www\www\silk\priv\utils.php:624
+[10-Sep-2018 10:01:58 UTC] PHP Warning:  file_get_contents(https://www.instapi.io/u/killmanagement): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in C:\data\programs\wamp64\www\www\silk\priv\utils.php on line 624
+[10-Sep-2018 10:01:58 UTC] PHP Stack trace:
+[10-Sep-2018 10:01:58 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[10-Sep-2018 10:01:58 UTC] PHP   2. print_models() C:\data\programs\wamp64\www\www\silk\women.php:12
+[10-Sep-2018 10:01:58 UTC] PHP   3. print_model_card() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:103
+[10-Sep-2018 10:01:58 UTC] PHP   4. get_nb_followers() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:54
+[10-Sep-2018 10:01:58 UTC] PHP   5. file_get_contents() C:\data\programs\wamp64\www\www\silk\priv\utils.php:624
+[10-Sep-2018 10:02:00 UTC] PHP Warning:  file_get_contents(https://www.instapi.io/u/killmanagement): failed to open stream: HTTP request failed! HTTP/1.1 500 Internal Server Error
+ in C:\data\programs\wamp64\www\www\silk\priv\utils.php on line 624
+[10-Sep-2018 10:02:00 UTC] PHP Stack trace:
+[10-Sep-2018 10:02:00 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\women.php:0
+[10-Sep-2018 10:02:00 UTC] PHP   2. print_models() C:\data\programs\wamp64\www\www\silk\women.php:12
+[10-Sep-2018 10:02:00 UTC] PHP   3. print_model_card() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:103
+[10-Sep-2018 10:02:00 UTC] PHP   4. get_nb_followers() C:\data\programs\wamp64\www\www\silk\priv\models-page-builder.php:54
+[10-Sep-2018 10:02:00 UTC] PHP   5. file_get_contents() C:\data\programs\wamp64\www\www\silk\priv\utils.php:624
+[10-Sep-2018 11:32:51 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:32:51 UTC] PHP Stack trace:
+[10-Sep-2018 11:32:51 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:33:02 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:33:02 UTC] PHP Stack trace:
+[10-Sep-2018 11:33:02 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:33:05 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:33:05 UTC] PHP Stack trace:
+[10-Sep-2018 11:33:05 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:34:08 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:34:08 UTC] PHP Stack trace:
+[10-Sep-2018 11:34:08 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:34:11 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:34:11 UTC] PHP Stack trace:
+[10-Sep-2018 11:34:11 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:34:14 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:34:14 UTC] PHP Stack trace:
+[10-Sep-2018 11:34:14 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0
+[10-Sep-2018 11:35:32 UTC] PHP Notice:  Undefined variable: field_name in C:\data\programs\wamp64\www\www\silk\submission.php on line 24
+[10-Sep-2018 11:35:32 UTC] PHP Stack trace:
+[10-Sep-2018 11:35:32 UTC] PHP   1. {main}() C:\data\programs\wamp64\www\www\silk\submission.php:0

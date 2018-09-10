@@ -13,7 +13,7 @@ if (!empty($_POST)) {
 		'first-name' => 'first name', 'last-name' => 'last name', 'address' => 'address', 'city-town' => 'city/town',
 		'postcode' => 'post code', 'date-birth' => 'date of birth', 'hair' => 'hair colour', 'eyes' => 'eye colour',
 		'height' => 'height', 'waist' => 'waist', 'bust' => 'bust', 'dress' => 'dress', 'hips' => 'hips',
-		'shoe' => 'shoe size', 'accept-policy' => 'you must accept Information to the Applicant'
+		'shoe' => 'shoe size', 'accept-policy' => 'you must accept Information to the Applicant', 'sex' => 'sex'
 	);
 	$special_fields = array('email', 'phone');
 	$file_fields = array('file-1', 'file-2', 'file-3');
@@ -61,13 +61,13 @@ if (!empty($_POST)) {
 		$subject = 'Submission request';
 		$body = '';
 		$field_names_to_print = array(
-			'first-name', 'last-name', 'email', 'phone', 'address', 'city-town',
+			'sex', 'first-name', 'last-name', 'email', 'phone', 'address', 'city-town',
 			'postcode', 'date-birth', 'hairs', 'eyes',
 			'height', 'waist', 'bust', 'dress', 'hips',
 			'shoe'
 		);
 		$fields_titles = array(
-			'first-name' => 'first name', 'last-name' => 'last name', 'email' => 'Email', 'Phone' => 'phone', 'address' => 'address', 'city-town' => 'city/town',
+			'sex' => 'Sex', 'first-name' => 'first name', 'last-name' => 'last name', 'email' => 'Email', 'Phone' => 'phone', 'address' => 'address', 'city-town' => 'city/town',
 			'postcode' => 'post code', 'date-birth' => 'date of birth', 'hairs' => 'hairs', 'eyes' => 'eyes',
 			'height' => 'height', 'waist' => 'waist', 'bust' => 'bust', 'dress' => 'dress', 'hips' => 'hips',
 			'shoe' => 'shoes', 'file-1' => 'File 1', 'file-2' => 'File 2', 'file-3' => 'File 3'
@@ -116,9 +116,19 @@ capture_start();
 	<p class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></p>
 	<?php }; ?>
 	<div class="row">
-		<div class="col-sm"><?php echo $config->submission_page_text; ?></div>
+		<div class="col-sm submission-policy"><?php echo $config->submission_page_text; ?></div>
 		<div class="col-sm">
 			<form method="post" enctype="multipart/form-data">
+                <div class="form-row mb-3 ml-1">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" type="radio" id="male" value="male" name="sex" <?php if (utils_s_post('sex') === 'male') {echo 'checked';} ?>>
+                        <label class="custom-control-label" for="male">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" type="radio" id="female" value="female" name="sex" <?php if (utils_s_post('sex') === 'female') {echo 'checked';} ?>>
+                        <label class="custom-control-label" for="female">Female</label>
+                    </div>
+                </div>
 				<div class="form-row">
 					<div class="form-group col-sm">
 						<input type="text" name="first-name" class="form-control" placeholder="First name" value="<?php echo utils_s_post('first-name', '');?>"/>
@@ -141,7 +151,7 @@ capture_start();
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="form-group col-sm">
+					<div class="form-group col-sm-6">
 						<input type="text" name="city-town" class="form-control" placeholder="City/Town" value="<?php echo utils_s_post('city-town', '');?>"/>
 					</div>
 					<div class="form-group col-sm">
@@ -179,36 +189,33 @@ capture_start();
 						<input type="text" name="shoe" class="form-control" placeholder="Shoe size" value="<?php echo utils_s_post('shoe', '');?>"/>
 					</div>
 				</div>
-				<div>IMAGES (UP TO 2MB EACH)</div>
-				<div class="form-row">
-					<div class="form-group col-sm">
-						<div class="custom-file col-sm">
-							<input type="file" class="custom-file-input" name="file-1" id="file-1" />
-							<label class="custom-file-label" for="file-1">Choose file...</label>
-						</div>
+				<div class="mt-4 mb-2 info">IMAGES (UP TO 2MB EACH)</div>
+				<div class="form-row files align-items-center">
+					<div class="form-group col-sm-4">
+						<label class="btn btn-default">
+                            Drops file here to upload <input type="file" name="file-1" hidden/>
+                        </label>
 					</div>
-					<div class="form-group col-sm">
-						<div class="custom-file col-sm">
-							<input type="file" class="custom-file-input" name="file-2" id="file-2" />
-							<label class="custom-file-label" for="file-2">Choose file...</label>
-						</div>
+					<div class="form-group col-sm-4">
+                        <label class="btn btn-default">
+                            Drops file here to upload <input type="file" name="file-2" hidden/>
+                        </label>
 					</div>
-					<div class="form-group col-sm">
-						<div class="custom-file col-sm">
-							<input type="file" class="custom-file-input" name="file-3" id="file-3" />
-							<label class="custom-file-label" for="file-3">Choose file...</label>
-						</div>
+					<div class="form-group col-sm-4">
+                        <label class="btn btn-default">
+                            Drops file here to upload <input type="file" name="file-3" hidden/>
+                        </label>
 					</div>
 				</div>
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" name="accept-policy" id="accept-policy"/>
-					<label class="form-check-label" for="accept-policy">I read and I accept the Information to the Applicant.</label>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" name="accept-policy" id="accept-policy"/>
+					<label class="custom-control-label info" for="accept-policy">I read and I accept the Information to the Applicant.</label>
 				</div>
-				<div class="form-check">
-					<input type="checkbox" class="form-check-input" name="accept-data-sharing" id="accept-data-sharing"/>
-					<label class="form-check-label" for="accept-data-sharing"><?php echo $config->submission_page_data_sharing_text;?></label>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" name="accept-data-sharing" id="accept-data-sharing"/>
+					<label class="custom-control-label info" for="accept-data-sharing"><?php echo $config->submission_page_data_sharing_text;?></label>
 				</div>
-				<div class="form-group">
+				<div class="form-group mt-3 submit-button">
 					<button type="submit" class="btn btn-dark">Submit</button>
 				</div>
 			</form>
