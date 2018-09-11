@@ -305,6 +305,16 @@ img.instagram {
     font-weight: bold;
 }
 
+#about input, #about textarea {
+    background-color: #F2F2F2;
+}
+
+@media (min-width: 992px) {
+    #about form {
+        max-width: 60%;
+    }
+}
+
 #about button, #submission button {
     border-radius: 0; !important;
     font-weight: bold;
@@ -316,20 +326,17 @@ img.instagram {
     background-color: #F2F2F2;
 }
 
-@media (min-width: 992px) {
-    #about form {
-        max-width: 60%;
-    }
-}
-
 #submission .submission {
     text-align: center;
     font-size: 1.3rem;
     margin-bottom: 4rem;
 }
 
-#submission form {
-    font-size: 0.80rem;
+#submission .submission-policy {
+    font-size: 1.3rem;
+}
+
+#submission form, #submission .submission-policy {
     font-family: "Times New Roman", Times, serif;
 }
 
@@ -350,9 +357,22 @@ img.instagram {
     padding: 1rem 4rem 1rem 4rem
 }
 
-#submission .files label {
+#submission form .files label {
     background-color: #CCCCCC;
     border: none;
-    border-radius: 0; !important;
-    font-size: 0.95rem;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    color: #6C6C6C;
+}
+
+#submission form .files label:hover {
+    background-color: #BBBBBB;
+}
+
+#submission form .files label .strong {
+    font-weight: bold;
 }

@@ -161,7 +161,7 @@ capture_start();
 						<input type="text" name="date-birth" class="form-control" placeholder="Date of Birth" value="<?php echo utils_s_post('date-birth', '');?>"/>
 					</div>
 				</div>
-				<div class="form-row">
+				<div class="form-row mt-4">
 					<div class="form-group col-sm">
 						<input type="text" name="hair" class="form-control" placeholder="Hair colour" value="<?php echo utils_s_post('hair', '');?>"/>
 					</div>
@@ -192,29 +192,33 @@ capture_start();
 				<div class="mt-4 mb-2 info">IMAGES (UP TO 2MB EACH)</div>
 				<div class="form-row files align-items-center">
 					<div class="form-group col-sm-4">
-						<label class="btn btn-default">
-                            Drops file here to upload <input type="file" name="file-1" hidden/>
+						<label class="px-4 py-2 file-button">
+                            <span id="file-1">Drops file here to upload</span> <input type="file" name="file-1" hidden onchange="displayLabelFile(event, 'file-1');"/>
                         </label>
 					</div>
 					<div class="form-group col-sm-4">
-                        <label class="btn btn-default">
-                            Drops file here to upload <input type="file" name="file-2" hidden/>
+                        <label class="px-4 py-2 file-button">
+                            <span id="file-2">Drops file here to upload</span> <input type="file" name="file-2" hidden onchange="displayLabelFile(event, 'file-2');"/>
                         </label>
 					</div>
 					<div class="form-group col-sm-4">
-                        <label class="btn btn-default">
-                            Drops file here to upload <input type="file" name="file-3" hidden/>
+                        <label class="px-4 py-2 file-button">
+                            <span id="file-3">Drops file here to upload</span> <input type="file" name="file-3" hidden onchange="displayLabelFile(event, 'file-3');"/>
                         </label>
 					</div>
 				</div>
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" name="accept-policy" id="accept-policy"/>
-					<label class="custom-control-label info" for="accept-policy">I read and I accept the Information to the Applicant.</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" name="accept-data-sharing" id="accept-data-sharing"/>
-					<label class="custom-control-label info" for="accept-data-sharing"><?php echo $config->submission_page_data_sharing_text;?></label>
-				</div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="accept-policy" id="accept-policy"/>
+                        <label class="custom-control-label info" for="accept-policy">I read and I accept the Information to the Applicant.</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name="accept-data-sharing" id="accept-data-sharing"/>
+                        <label class="custom-control-label info" for="accept-data-sharing"><?php echo $config->submission_page_data_sharing_text;?></label>
+                    </div>
+                </div>
 				<div class="form-group mt-3 submit-button">
 					<button type="submit" class="btn btn-dark">Submit</button>
 				</div>
@@ -223,6 +227,26 @@ capture_start();
 	</div>
 <?php
 capture_end($data->content);
+capture_start();
+?>
+<script>//<!--
+    function displayLabelFile(event, labelID) {
+        const element = document.getElementById(labelID);
+        element.classList.remove('strong');
+        if (element) {
+            element.textContent = 'Drop file here to upload';
+            const fileName = event.target.value;
+            const startBaseName = fileName.includes('\\') ? fileName.lastIndexOf('\\') : fileName.lastIndexOf('/');
+            if (startBaseName >= 0 && startBaseName < fileName.length - 1) {
+                const baseName = fileName.substring(startBaseName + 1);
+                element.textContent = `File: ${baseName}`;
+                element.classList.add('strong');
+            }
+        }
+    }
+//--></script>
+<?php
+capture_end($data->scripts);
 $data->title = 'SUBMISSION';
 $data->pagename = 'submission';
 echo template($data);

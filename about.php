@@ -60,7 +60,7 @@ capture_start();
 <?php if($attention_message) { ?>
 <p class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></p>
 <?php }; ?>
-<form method="post">
+<form method="post" class="mt-5">
 	<fieldset class="form-group">
 		<legend>Contact us</legend>
 		<div class="form-row">
