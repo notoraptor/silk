@@ -5,6 +5,7 @@ $allowedPages = array(
 	'config',
 	'deletemodel',
 	'model',
+	'modelarticle',
 	'modelphoto',
 	'modelportfolio',
 	'models',

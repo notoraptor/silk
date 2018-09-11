@@ -46,6 +46,15 @@ a:hover {
     font-size: 4rem;
     line-height: 4rem;
 }
+.articles .article {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.discover-more {
+    text-align: center;
+    font-weight: bold;
+}
 
 /** Specific pages. **/
 

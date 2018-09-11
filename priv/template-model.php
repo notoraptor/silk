@@ -38,7 +38,7 @@ ob_start();
         <div class="col-sm model-buttons">
             <a class="link-portfolio" href="portfolio.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>">PORTFOLIO</a>
             <a class="ml-5 link-favourites" href="favourites.php?origin=<?php echo $origin;?>&action=<?php echo ($in_favourites ? 'remove' : 'add');?>&id=<?php echo $model->model_id;?>"><?php echo ($in_favourites ? '-' : '+'); ?> FAVOURITES</a>
-            <a class="ml-5 link-print" href="portfolio-print.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>"><span class="down-arrow">&darr;</span> PRINT</a>
+            <a class="ml-5 link-print" href="polaroid.php?origin=<?php echo $origin;?>&id=<?php echo $model->model_id;?>"><span class="down-arrow">&darr;</span> PRINT</a>
         </div>
         <div class="col-sm-1 model-details">
             <?php

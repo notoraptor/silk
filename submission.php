@@ -111,9 +111,9 @@ if (!empty($_POST)) {
 }
 capture_start();
 ?>
-	<p class="submission">COULD YOU BE A SILK MODEL ?</p>
+	<div class="submission">COULD YOU BE A SILK MODEL ?</div>
 	<?php if($attention_message) { ?>
-	<p class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></p>
+	<div class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
 	<?php }; ?>
 	<div class="row">
 		<div class="col-sm submission-policy"><?php echo $config->submission_page_text; ?></div>

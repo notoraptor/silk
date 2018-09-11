@@ -3,6 +3,8 @@ require_once('server_infos.php');
 require_once('priv/utils.php');
 require_once('priv/template.php');
 $db = new Database();
+$models = $db->models();
+$models_with_articles = get_models_for_articles($models);
 $data = new FrontData($db);
 $config = $data->getConfig();
 $attention_message = '';
@@ -56,9 +58,9 @@ if (!empty($_POST)) {
 }
 capture_start();
 ?>
-<p class="about"><?php echo $config->about_page_text; ?></p>
+<div class="about"><?php echo $config->about_page_text; ?></div>
 <?php if($attention_message) { ?>
-<p class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></p>
+<div class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
 <?php }; ?>
 <form method="post" class="mt-5">
 	<fieldset class="form-group">
@@ -86,6 +88,15 @@ capture_start();
 		</div>
 	</fieldset>
 </form>
+<?php if (count($models_with_articles)) {
+    ?>
+    <div class="discover-more">
+        <div>DISCOVER MORE</div>
+        <div>&#8226;&#8226;&#8226;</div>
+    </div>
+    <?php
+    echo print_models_for_articles($models_with_articles);
+} ?>
 <?php
 capture_end($data->content);
 $data->title = 'ABOUT';

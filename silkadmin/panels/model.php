@@ -64,12 +64,13 @@ $profilePhoto = $model->getPhotoByBasename($model->photo);
 	<div class="cell main">
 		<h2><a href="index.php?panel=models">Modèles</a> / <?php echo $fullName;?></h2>
 		<p>
-		<a href="index.php?panel=modelportfolio&id=<?php echo $model->model_id;?>">Portfolio</a> |
-		<a style="color:red;"
-           href="index.php?panel=deletemodel&id=<?php echo $model->model_id;?>"
-           onclick="return confirm('Voulez-vous vraiment supprimer le modèle <?php echo $fullName;?> ?');">
-            <strong>Supprimer ce modèle</strong>
-        </a>
+            <a href="index.php?panel=modelarticle&id=<?php echo $model->model_id;?>">Modifier l'article du modèle</a> |
+            <a href="index.php?panel=modelportfolio&id=<?php echo $model->model_id;?>">Portfolio</a> |
+            <a style="color:red;"
+               href="index.php?panel=deletemodel&id=<?php echo $model->model_id;?>"
+               onclick="return confirm('Voulez-vous vraiment supprimer le modèle <?php echo $fullName;?> ?');">
+                <strong>Supprimer ce modèle</strong>
+            </a>
 		</p>
 	</div>
 	<div class="cell photo"><?php if($profilePhoto) { ?><img src="<?php echo $profilePhoto['url'];?>"/><?php } ?></div>

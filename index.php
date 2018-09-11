@@ -5,6 +5,8 @@ require_once('priv/utils.php');
 require_once('priv/template.php');
 
 $db = new Database();
+$models = $db->models();
+$models_with_articles = get_models_for_articles($models);
 $data = new FrontData($db);
 $config = $data->getConfig();
 $videoInfo = false;
@@ -16,6 +18,7 @@ if($config && $config->home_video_link) {
         <div class="welcome" id="videoWelcome">
             <div class="welcomeElement" id="homeVideo"><?php echo Video::getHomeCode($videoInfo); ?></div>
         </div>
+        <?php echo print_models_for_articles($models_with_articles); ?>
 		<?php capture_end($data->content);
 		capture_start();
 		switch($videoInfo[0]) {

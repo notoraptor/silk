@@ -114,8 +114,16 @@ class Database {
 	private function alterer_tables() {
 		$alterations = array(
 			array(
-				//'SHOW COLUMNS FROM '.DB_PREFIX.'produits LIKE \'prix_de_base\'',
-				//'ALTER TABLE '.DB_PREFIX.'produits ADD prix_de_base DECIMAL(14,2) DEFAULT 0',
+				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'article\'',
+				'ALTER TABLE '.DB_PREFIX.'model ADD article TEXT',
+			),
+			array(
+				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'show_article\'',
+				'ALTER TABLE '.DB_PREFIX.'model ADD show_article TINYINT NOT NULL DEFAULT 0',
+			),
+			array(
+				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'article_rank\'',
+				'ALTER TABLE '.DB_PREFIX.'model ADD article_rank INT UNSIGNED DEFAULT 0',
 			)
 		);
 		$compte = count($alterations);
@@ -230,6 +238,9 @@ class Database {
 				m.hair AS hair,
 				m.eyes AS eyes,
 				m.date_added AS date_added,
+				m.article AS article,
+				m.show_article AS show_article,
+				m.article_rank AS article_rank,
 				p.photo_1 AS photo_1,
 				p.photo_2 AS photo_2,
 				p.photo_3 AS photo_3,
@@ -254,6 +265,9 @@ class Database {
 		$values[] = $id;
 		$this->secure_modif('UPDATE '.DB_PREFIX.'model SET '.(implode(',', $keysForDB)).' WHERE model_id = ?', $values);
 		return $this->model($id);
+	}
+	public function model_update_article($model_id, $article, $show, $rank) {
+		$this->secure_modif('UPDATE '.DB_PREFIX.'model SET article = ?, show_article = ?, article_rank = ? WHERE model_id = ?', array($article, $show, $rank ? $rank : 0, $model_id));
 	}
 	public function model_photo_update($model_id, $photo_rank, $photo_name) {
 		if(!in_array($photo_rank, array(1, 2, 3, 4))) return false;
@@ -291,6 +305,9 @@ class Database {
 				m.hair AS hair,
 				m.eyes AS eyes,
 				m.date_added AS date_added,
+				m.article AS article,
+				m.show_article AS show_article,
+				m.article_rank AS article_rank,
 				p.photo_1 AS photo_1,
 				p.photo_2 AS photo_2,
 				p.photo_3 AS photo_3,
@@ -670,5 +687,72 @@ function utils_mail($mail, $subject, $message) {
 	$headers .='Content-Type: text/html; charset="iso-8859-1"'."\n";
 	return mail($mail, $subject, $message, $headers);
 }
+
+
+function get_models_for_articles($models) {
+	$models_with_articles = array();
+	foreach ($models as $model) if ($model->show_article && $model->article) {
+		$models_with_articles[] = $model;
+	}
+	if (count($models_with_articles)) {
+		$sort_func = function($a, $b) {
+			$t = $a->article_rank - $b->article_rank;
+			if (!$t)
+				$t = strcmp($a->first_name, $b->first_name);
+			if (!$t)
+				$t = strcmp($a->last_name, $b->last_name);
+			return $t;
+		};
+		usort($models_with_articles, $sort_func);
+	}
+	return $models_with_articles;
+}
+
+function print_models_for_articles($models_with_articles) {
+	$html = '';
+	capture_start();
+	if (count($models_with_articles)) {
+		?>
+		<div class="articles mt-5">
+			<?php
+			$count_selected = count($models_with_articles);
+			$n_rows = (int)($count_selected / 3);
+			if ($count_selected - 3 * $n_rows) ++$n_rows;
+			$index_model = 0;
+			for ($i_row = 0; $i_row < $n_rows; ++$i_row) { ?>
+				<div class="row mb-4">
+					<?php for ($i_col = 0; $i_col < 3; ++$i_col) { ?>
+						<div class="col-md align-self-center">
+							<?php
+							$index_model = 3 * $i_row + $i_col;
+							if ($index_model < $count_selected) {
+								$model = $models_with_articles[$index_model];
+								$article = $model->article;
+								for($i = 1; $i <= 4; ++$i) {
+									$to_search = '{photo '.$i.'}';
+									$photo_id = 'photo_'.$i;
+									if ($model->$photo_id) {
+										$article = str_replace($to_search, '<img class="img-fluid" src="'.($model->getPhotoByBasename($model->$photo_id)['url']).'"/>', $article);
+									}
+								}
+								?>
+								<div class="article"><?php echo $article;?></div>
+								<?php
+							}
+							?>
+						</div>
+					<?php } ?>
+				</div>
+				<?php
+			}
+			?>
+		</div>
+		<?php
+	}
+	capture_end($html);
+	return $html;
+}
+
+
 
 ?>
