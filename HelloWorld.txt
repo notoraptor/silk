@@ -1,7 +1,0 @@
-Anglais : Hello World
-Grec : Γειά σου κόσμος
-Polonais : Witaj świecie
-Portuguais : Olá mundo
-Russe : Здравствулте мир
-japon: 漢字漢字漢字漢字漢字漢字漢字漢字
-Vietnamien : Xin chào thế giới

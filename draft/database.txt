@@ -47,7 +47,6 @@ favourites.php
 **lifestyle.php
 **men.php
 model.php
-portfolio-print.php
 portfolio.php
 *submission.php
 **women.php
