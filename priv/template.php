@@ -14,7 +14,7 @@ $menu_titles = array('MEN', 'WOMEN', 'LIFESTYLE', 'SUBMISSION', 'ABOUT');
 $menu_names = array('men', 'women', 'lifestyle', 'submission', 'about');
 $count_favourites = utils_count_favourites();
 if ($count_favourites) {
-	$menu_titles[] = 'FAVOURITES ('.$count_favourites.')';
+	$menu_titles[] = '&hearts; ('.$count_favourites.')';
 	$menu_names[] = 'favourites';
 }
 $count_menu = count($menu_titles);
@@ -33,6 +33,7 @@ ob_start();
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 	<?php if ($data->head != '') echo $data->head; ?>
+    <script src="js/mq.genie.min.js"></script>
 </head>
 <body <?php if ($data->pagename != '') echo 'id="' . $data->pagename . '"'; ?>>
 <?php if ($data->messages != '') { ?>
@@ -46,12 +47,12 @@ ob_start();
         </div>
         <div id="line-2">MANAGEMENT</div>
     </div>
-    <nav class="nav flex-column flex-sm-row menu-bar">
+    <nav class="row menu-bar text-center">
 		<?php for ($i = 0; $i < $count_menu; ++$i) {
 			$menu_title = $menu_titles[$i];
 			$menu_name = $menu_names[$i];
 			?>
-            <div class="flex-sm-fill text-sm-center nav-item nav-link menu">
+            <div class="col-md menu py-2 py-md-0">
 				<?php if ($data->pagename != $menu_name) { ?>
                 <a href="<?php echo $menu_name.'.php'; ?>"><?php } ?>
 					<?php echo $menu_title; ?>

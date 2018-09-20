@@ -13,12 +13,12 @@ function print_model_card($models, $index, $pagename) {
 		?>
             <div class="model">
                 <div class="row m-0 h-100">
-                    <div class="col-lg align-self-center">
+                    <div class="col-lg-6 image-wrapper">
                         <a href="model.php?origin=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
                             <img class="img-fluid" src="<?php echo $model->getPhotoByBasename($model->photo)['url']; ?>"/>
                         </a>
                     </div>
-                    <div class="col-lg align-self-end pb-3">
+                    <div class="col-lg-6 align-self-end pb-3">
                         <div class="details">
                             <p class="name">
                                 <a href="model.php?origin=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
@@ -39,25 +39,25 @@ function print_model_card($models, $index, $pagename) {
                                         class="value"><?php echo $model->shoes; ?></span></div>
                             <div class="detail"><span class="key">Eyes:</span> <span
                                         class="value"><?php echo $model->eyes; ?></span></div>
-                            <div class="icons">
+                            <div class="icons pt-3">
                                 <?php if ($model->instagram_link) {
                                     ?>
                                     <div class="row">
-                                        <div class="col-sm text-right">
+                                        <div class="col-sm-6 pr-2 text-right instagram">
                                             <div style="display: inline-block">
                                                 <div class="text-center">
                                                     <a target="_blank" href="https://www.instagram.com/<?php echo $model->instagram_link; ?>">
-                                                        <img class="img-fluid instagram" src="data/main/instagram-black.svg">
+                                                        <img class="img-fluid" src="data/main/instagram-black.svg">
                                                     </a>
                                                 </div>
-                                                <div class="text-center">
+                                                <div class="text-center pt-1">
                                                     <?php echo get_nb_followers($model->instagram_link); ?>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm text-left">
-                                            <a class="heart" href="favourites.php?action=add&from=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
-                                                &hearts;
+                                        <div class="col-sm-6 pl-2 text-left heart">
+                                            <a href="favourites.php?action=add&from=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
+                                                <img class="img-fluid heart" src="data/main/heart-black.svg"/>
                                             </a>
                                         </div>
                                     </div>

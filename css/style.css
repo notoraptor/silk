@@ -46,6 +46,7 @@ a:hover {
     font-size: 4rem;
     line-height: 4rem;
 }
+
 .articles .article {
     text-align: center;
     font-size: 0.8rem;
@@ -54,6 +55,24 @@ a:hover {
 .discover-more {
     text-align: center;
     font-weight: bold;
+}
+
+.menu-bar {
+    margin:0;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 992px) {
+    .menu-bar {
+        max-width: 60%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-bar {
+        max-width: 100%;
+    }
 }
 
 /** Specific pages. **/
@@ -91,24 +110,32 @@ a:hover {
         right:0;
         left:0;
     }
+
+    .model .image-wrapper {
+        background-color: rgb(80, 80, 80);
+        height:100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding:0;
+    }
 }
 
 .model .details {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.70rem;
+}
+
+.model .detail + .detail {
+    margin-top: 1px;
 }
 
 .model .name {
     font-size: 0.95rem;
 }
 
-img.instagram {
+.instagram img, .heart img {
     height: 1rem;
-}
-
-.model .heart {
-    font-weight: bold;
-    font-size: 1.7rem;
 }
 
 #homeVideo {

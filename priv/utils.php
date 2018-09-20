@@ -639,6 +639,8 @@ function capture_end(&$content) {
 
 function get_nb_followers($instagram_username) {
 	$json_string = file_get_contents('https://www.instapi.io/u/'.$instagram_username);
+	if (!$json_string)
+		$json_string = file_get_contents('https://www.instagram.com/'.$instagram_username.'/?__a=1');
 	if ($json_string) {
 		$json_content = json_decode($json_string);
 		if (isset($json_content->graphql->user->edge_followed_by->count)) {
