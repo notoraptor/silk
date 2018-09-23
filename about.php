@@ -62,32 +62,38 @@ capture_start();
 <?php if($attention_message) { ?>
 <div class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
 <?php }; ?>
-<form method="post" class="mt-5">
-	<fieldset class="form-group">
-		<legend>Contact us</legend>
-		<div class="form-row">
-			<div class="form-group col-sm">
-				<input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo utils_s_post('name', '');?>"/>
-			</div>
-			<div class="form-group col-sm">
-				<input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo utils_s_post('email', '');?>"/>
-			</div>
-		</div>
-		<div class="form-row">
-			<div class="form-group col">
-				<input type="text" name="phone" class="form-control" placeholder="Phone Number"  value="<?php echo utils_s_post('phone', '');?>"/>
-			</div>
-		</div>
-		<div class="form-row">
-			<div class="form-group col">
-				<textarea class="form-control" name="message" placeholder="Message"><?php echo utils_s_post('message', '');?></textarea>
-			</div>
-		</div>
-		<div class="form-group">
-			<button type="submit" class="btn btn-dark px-4">Send</button>
-		</div>
-	</fieldset>
-</form>
+<div class="row align-items-center">
+    <div class="col-md-7">
+        <form method="post" class="mt-5">
+            <fieldset class="form-group">
+                <legend>Contact us</legend>
+                <div class="form-row">
+                    <div class="form-group col-sm">
+                        <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo utils_s_post('name', '');?>"/>
+                    </div>
+                    <div class="form-group col-sm">
+                        <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo utils_s_post('email', '');?>"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <input type="text" name="phone" class="form-control" placeholder="Phone Number"  value="<?php echo utils_s_post('phone', '');?>"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <textarea class="form-control" name="message" placeholder="Message"><?php echo utils_s_post('message', '');?></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark px-4">Send</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md text-center mb-5 mb-md-0 text-md-right"><?php echo $config->about_contact_text;?></div>
+</div>
+
 <?php if (count($models_with_articles)) {
     ?>
     <div class="discover-more">

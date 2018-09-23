@@ -124,6 +124,10 @@ class Database {
 			array(
 				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'article_rank\'',
 				'ALTER TABLE '.DB_PREFIX.'model ADD article_rank INT UNSIGNED DEFAULT 0',
+			),
+			array(
+				'SHOW COLUMNS FROM '.DB_PREFIX.'configuration LIKE \'about_contact_text\'',
+				'ALTER TABLE '.DB_PREFIX.'configuration ADD about_contact_text TEXT DEFAULT NULL',
 			)
 		);
 		$compte = count($alterations);
@@ -208,13 +212,13 @@ class Database {
 		return $administrators;
 	}
 	public function config() {
-		$data = $this->oneResult('SELECT home_video_link, about_page_text, submission_page_text, submission_page_data_sharing_text, site_email FROM '.DB_PREFIX.'configuration');
+		$data = $this->oneResult('SELECT home_video_link, about_page_text, about_contact_text, submission_page_text, submission_page_data_sharing_text, site_email FROM '.DB_PREFIX.'configuration');
 		return $data ? new Config($data) : false;
 	}
 	public function config_update($config_dict) {
 		$this->secure_modif(
-			'UPDATE '.DB_PREFIX.'configuration SET home_video_link = ?, about_page_text = ?, submission_page_text = ?, submission_page_data_sharing_text = ?, site_email = ?',
-			array($config_dict['home_video_link'], $config_dict['about_page_text'], $config_dict['submission_page_text'], $config_dict['submission_page_data_sharing_text'], $config_dict['site_email'])
+			'UPDATE '.DB_PREFIX.'configuration SET home_video_link = ?, about_page_text = ?, about_contact_text = ?, submission_page_text = ?, submission_page_data_sharing_text = ?, site_email = ?',
+			array($config_dict['home_video_link'], $config_dict['about_page_text'], $config_dict['about_contact_text'], $config_dict['submission_page_text'], $config_dict['submission_page_data_sharing_text'], $config_dict['site_email'])
 		);
 	}
 	public function model_exists($id) {

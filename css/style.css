@@ -184,7 +184,7 @@ a:hover {
 #model .detail-title {
     color: #929292;
     font-weight: bolder;
-    font-size: 0.80rem;
+    font-size: 0.70rem;
 }
 
 #model .detail-value {
@@ -285,11 +285,13 @@ a:hover {
     background-color: #F2F2F2;
 }
 
+/*
 @media (min-width: 992px) {
     #about form {
         max-width: 60%;
     }
 }
+*/
 
 #about button, #submission button {
     border-radius: 0; !important;

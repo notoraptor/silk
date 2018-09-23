@@ -4,6 +4,7 @@ $db = new Database();
 if(!empty($_POST)) {
 	$home_video_link = utils_safe_post('home_video_link');
 	$about_page_text = utils_safe_post('about_page_text');
+	$about_contact_text = utils_safe_post('about_contact_text');
 	$submission_page_text = utils_safe_post('submission_page_text');
 	$submission_page_data_sharing_text = utils_safe_post('submission_page_data_sharing_text');
 	$site_email = utils_safe_post('site_email');
@@ -16,6 +17,7 @@ if(!empty($_POST)) {
 		$db->config_update(array(
 		        'home_video_link' => $home_video_link,
 		        'about_page_text' => $about_page_text,
+		        'about_contact_text' => $about_contact_text,
 		        'submission_page_text' => $submission_page_text,
 		        'submission_page_data_sharing_text' => $submission_page_data_sharing_text,
 		        'site_email' => $site_email
@@ -33,6 +35,7 @@ else
 $_POST = array(
 	'home_video_link' => $post_video_link,
 	'about_page_text' => utils_safe_post('about_page_text', $config->about_page_text),
+	'about_contact_text' => utils_safe_post('about_contact_text', $config->about_contact_text),
 	'submission_page_text' => utils_safe_post('submission_page_text', $config->submission_page_text),
 	'submission_page_data_sharing_text' => utils_safe_post('submission_page_data_sharing_text', $config->submission_page_data_sharing_text),
 	'site_email' => utils_safe_post('site_email', $config->site_email)
@@ -46,6 +49,7 @@ $_POST = array(
 		<?php
 		echo input_url("Lien vers la vidéo de la page d'accueil", 'home_video_link');
 		echo utils_textarea('À propos','about_page_text');
+		echo utils_textarea('Contact','about_contact_text');
 		echo utils_textarea('Politique de recrutement','submission_page_text');
 		echo utils_textarea('Politique de partage des donn&eacute;es','submission_page_data_sharing_text');
 		echo input_text('Courriel du site', 'site_email');
@@ -68,7 +72,7 @@ $_POST = array(
     <script src="nicEdit/nicEdit.js" type="text/javascript"></script>
     <script type="text/javascript">//<!--
         bkLib.onDomLoaded(function() {
-            const indices = ['about_page_text', 'submission_page_text', 'submission_page_data_sharing_text'];
+            const indices = ['about_page_text', 'about_contact_text', 'submission_page_text', 'submission_page_data_sharing_text'];
             for (let index of indices)
                 new nicEditor({iconsPath: 'nicEdit/nicEditorIcons.gif', buttonList: ['fontSize','bold','italic','underline','left','center','right','justify','link','unlink','removeformat','xhtml']}).panelInstance(index);
         });
