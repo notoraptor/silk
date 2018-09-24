@@ -18,8 +18,8 @@ if (!empty($_POST)) {
 	$special_fields = array('email', 'phone');
 	$file_fields = array('file-1', 'file-2', 'file-3');
 	$fields['accept-data-sharing'] = utils_s_post('accept-data-sharing');
-	foreach($required_fields as $fiel_name => $field_title) {
-		$field_value = utils_s_post($fiel_name, false);
+	foreach($required_fields as $field_name => $field_title) {
+		$field_value = utils_s_post($field_name, false);
 		if ($field_value || $field_value === "0") {
 			$fields[$field_name] = $field_value;
 		} else {
@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 				$upload_folder = server_dir().'/uploads';
 				if (!file_exists($upload_folder))
 					mkdir($upload_folder);
-				$ret = utils_upload($file_field_name, server_dir().'uploads');
+				$ret = utils_upload($file_field_name, server_dir().'/uploads');
 				$uploaded_file_path = $ret['file'];
 				$error_message = $ret['error'];
 				if($uploaded_file_path) {
@@ -67,34 +67,34 @@ if (!empty($_POST)) {
 			'shoe'
 		);
 		$fields_titles = array(
-			'sex' => 'Sex', 'first-name' => 'first name', 'last-name' => 'last name', 'email' => 'Email', 'Phone' => 'phone', 'address' => 'address', 'city-town' => 'city/town',
-			'postcode' => 'post code', 'date-birth' => 'date of birth', 'hairs' => 'hairs', 'eyes' => 'eyes',
-			'height' => 'height', 'waist' => 'waist', 'bust' => 'bust', 'dress' => 'dress', 'hips' => 'hips',
-			'shoe' => 'shoes', 'file-1' => 'File 1', 'file-2' => 'File 2', 'file-3' => 'File 3'
+			'sex' => 'Sex', 'first-name' => 'First name', 'last-name' => 'Last name', 'email' => 'Email', 'phone' => 'Phone', 'address' => 'Address', 'city-town' => 'City/Town',
+			'postcode' => 'Post code', 'date-birth' => 'Date of birth', 'hairs' => 'Hair colour', 'eyes' => 'Eye colour',
+			'height' => 'Height', 'waist' => 'Waist', 'bust' => 'Bust', 'dress' => 'Dress', 'hips' => 'Hips',
+			'shoe' => 'Shoe size', 'file-1' => 'File 1', 'file-2' => 'File 2', 'file-3' => 'File 3'
 		);
 		capture_start();
 		?>
 		<div>
-			<h1>Submission request</h1>
+			<h1>SILK / Submission request (<?php echo date('d/m/Y - H:i:s');?>)</h1>
 			<table>
 				<?php
 				foreach($field_names_to_print as $field_name_to_print) {
 					$title = $fields_titles[$field_name_to_print];
 					$value = isset($fields[$field_name_to_print]) && $fields[$field_name_to_print] ? $fields[$field_name_to_print] : '(none)';
 					?>
-					<tr><td><?php echo $title;?>:</td><td><?php echo $value;?></td></tr>
+                <tr><td><strong><?php echo $title;?>:</strong></td><td><?php echo $value;?></td></tr>
 					<?php
-					foreach($file_fields as $file_field_name) {
-						if (isset($fields[$file_field_name])) {
-							$file_url = str_replace(server_dir(), server_http(), $fields[$file_field_name]);
-							?>
-							<tr><td><?php echo $fields_titles[$file_field_name];?>:</td><td><a href="<?php echo $file_url;?>"><?php echo $file_url;?></a></td></tr>
-							<?php
-						}
-					}
 				}
+                foreach($file_fields as $file_field_name) {
+                    if (isset($fields[$file_field_name])) {
+                        $file_url = str_replace(server_dir(), server_http(), $fields[$file_field_name]);
+                        ?>
+                <tr><td><strong><?php echo $fields_titles[$file_field_name];?>:</strong></td><td><a href="<?php echo $file_url;?>"><?php echo $file_url;?></a></td></tr>
+                        <?php
+                    }
+                }
 				?>
-				<tr><td>Accept data sharing?</td><td><?php echo (isset($fields['accept-data-sharing']) && $fields['accept-data-sharing'] ? 'Yes' : 'No');?></td></tr>
+				<tr><td><strong>Accept data sharing?</strong></td><td><?php echo (isset($fields['accept-data-sharing']) && $fields['accept-data-sharing'] ? 'Yes' : 'No');?></td></tr>
 			</table>
 		</div>
 		<?php

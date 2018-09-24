@@ -52,49 +52,6 @@ ob_start();
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <?php if ($data->scripts != '') echo $data->scripts; ?>
 <script type="text/javascript"><!--
-    let indexPhoto = 0;
-    const PHOTOS = ['<?php echo implode("', '", $photo_indices);?>'];
-
-    function updateIndexView() {
-        const indexView = document.getElementById('index');
-        const buttonPrevious = document.getElementById('button-previous');
-        const buttonNext = document.getElementById('button-next');
-        if (indexView)
-            indexView.textContent = `0${indexPhoto + 1}/0${PHOTOS.length}`;
-        if (buttonPrevious)
-            buttonPrevious.style.display = indexPhoto ? 'block' : 'none';
-        if (buttonNext)
-            buttonNext.style.display = indexPhoto < PHOTOS.length - 1 ? 'block' : 'none';
-    }
-
-    function previousImage() {
-        if (indexPhoto) {
-            const currentPhoto = document.getElementById(PHOTOS[indexPhoto]);
-            if (currentPhoto) {
-                currentPhoto.style.display = "none";
-                --indexPhoto;
-                const nextPhoto = document.getElementById(PHOTOS[indexPhoto]);
-                if (nextPhoto)
-                    nextPhoto.style.display = "block";
-                updateIndexView();
-            }
-        }
-    }
-
-    function nextImage() {
-        if (indexPhoto !== PHOTOS.length - 1) {
-            const currentPhoto = document.getElementById(PHOTOS[indexPhoto]);
-            if (currentPhoto) {
-                currentPhoto.style.display = "none";
-                ++indexPhoto;
-                const nextPhoto = document.getElementById(PHOTOS[indexPhoto]);
-                if (nextPhoto)
-                    nextPhoto.style.display = "block";
-                updateIndexView();
-            }
-        }
-    }
-
     document.body.onload = function () {
         // Gestion des éléments survolables pour iPhone et les appareils mobiles.
         var hoverables = document.getElementsByClassName('hoverable');

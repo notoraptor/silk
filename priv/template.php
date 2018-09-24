@@ -63,9 +63,11 @@ ob_start();
     </nav>
     <div class="mt-5 mb-3 page">
 		<?php echo $data->content; ?>
+        <!--
         <div class="footer">
             <a id="footer" href="#page" onclick="backTop('content'); return false;">/BACK TO TOP</a>
         </div>
+        -->
     </div>
 </div>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -91,9 +93,6 @@ ob_start();
             }
         }
     }
-
-    //--></script>
-<script type="text/javascript"><!--
     function bouton_haut_de_page() {
         var bouton = document.getElementById('footer');
         if (bouton) {
@@ -101,8 +100,10 @@ ob_start();
             else bouton.style.display = "none";
         }
     }
-    bouton_haut_de_page();
-    window.onscroll = bouton_haut_de_page;
+    function activer_bouton_haut_de_pags() {
+        bouton_haut_de_page();
+        window.onscroll = bouton_haut_de_page;
+    }
     //--></script>
 <script type="text/javascript"><!--
     document.body.onload = function () {
