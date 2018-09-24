@@ -58,7 +58,7 @@ if (!empty($_POST)) {
 		}
 	}
 	if (!$attention_type) {
-		$subject = 'Submission request';
+		$subject = 'SILK / Submission request ('.date('d/m/Y - H:i:s').')';
 		$body = '';
 		$field_names_to_print = array(
 			'sex', 'first-name', 'last-name', 'email', 'phone', 'address', 'city-town',
@@ -75,7 +75,7 @@ if (!empty($_POST)) {
 		capture_start();
 		?>
 		<div>
-			<h1>SILK / Submission request (<?php echo date('d/m/Y - H:i:s');?>)</h1>
+			<h1><?php echo $subject;?></h1>
 			<table>
 				<?php
 				foreach($field_names_to_print as $field_name_to_print) {

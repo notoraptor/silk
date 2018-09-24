@@ -30,7 +30,7 @@ if (!empty($_POST)) {
         $message = str_replace("\r\n", "<br/>", $message);
         $message = str_replace("\n", "<br/>", $message);
         $message = str_replace("\r", "<br/>", $message);
-		$subject = 'Conact request';
+		$subject = 'SILK / Contact request ('.date('d/m/Y - H:i:s').')';
 		$body = '';
 		capture_start();
 		if (!$email)
@@ -39,7 +39,7 @@ if (!empty($_POST)) {
 			$phone = '(none)';
 		?>
 		<div>
-			<h1>SILK / Contact request (<?php echo date('d/m/Y - H:i:s');?>)</h1>
+			<h1><?php echo $subject;?></h1>
 			<table>
 				<tr><td><strong>Name:</strong></td><td><?php echo $name;?></td></tr>
 				<tr><td><strong>Email:</strong></td><td><?php echo $email;?></td></tr>
