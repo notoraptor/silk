@@ -116,10 +116,10 @@ capture_start();
 	<div class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
 	<?php }; ?>
 	<div class="row">
-		<div class="col-sm submission-policy"><?php echo $config->submission_page_text; ?></div>
+		<div class="col-sm pt-5 submission-policy"><?php echo $config->submission_page_text; ?></div>
 		<div class="col-sm">
 			<form method="post" enctype="multipart/form-data">
-                <div class="form-row mb-3 ml-1">
+                <div class="form-row mb-4 ml-1">
                     <div class="custom-control custom-radio custom-control-inline">
                         <input class="custom-control-input" type="radio" id="male" value="male" name="sex" <?php if (utils_s_post('sex') === 'male') {echo 'checked';} ?>>
                         <label class="custom-control-label" for="male">Male</label>

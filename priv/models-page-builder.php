@@ -64,7 +64,7 @@ function print_model_card($models, $index, $pagename) {
                                     <?php
                                 } else {
                                     ?>
-                                    <div class="heart">&hearts;</div>
+                                    <div class="heart"><img class="img-fluid heart" src="data/main/heart-black.svg"/></div>
                                     <?php
                                 } ?>
                             </div>

@@ -50,6 +50,7 @@ a:hover {
 .articles .article {
     text-align: center;
     font-size: 0.8rem;
+    cursor: pointer;
 }
 
 .discover-more {
@@ -134,7 +135,7 @@ a:hover {
     font-size: 0.95rem;
 }
 
-.instagram img, .heart img {
+.instagram img, .heart img, img.heart {
     height: 1rem;
 }
 
