@@ -6,6 +6,7 @@
  * Time: 06:33
  */
 function print_model_card($models, $index, $pagename) {
+    if (!session_id()) session_start();
 	$html = '';
 	if ($index < count($models)) {
 		$model = $models[$index];
@@ -56,15 +57,15 @@ function print_model_card($models, $index, $pagename) {
                                             </div>
                                         </div>
                                         <div class="col-sm-6 pl-2 text-left heart">
-                                            <a href="favourites.php?action=add&from=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
-                                                <img class="img-fluid heart" src="data/main/heart-black.svg"/>
+                                            <a href="favourites.php?action=<?php echo utils_has_favourite($model->model_id) ? 'remove' : 'add';?>&from=<?php echo $pagename; ?>&id=<?php echo $model->model_id; ?>">
+                                                <img class="img-fluid heart" src="data/main/heart-<?php echo utils_has_favourite($model->model_id) ? 'red' : 'black';?>.svg"/>
                                             </a>
                                         </div>
                                     </div>
                                     <?php
                                 } else {
                                     ?>
-                                    <div class="heart">&hearts;</div>
+                                    <div class="heart"><img class="img-fluid heart" src="data/main/heart-black.svg"/></div>
                                     <?php
                                 } ?>
                             </div>

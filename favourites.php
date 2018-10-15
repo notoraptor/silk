@@ -29,9 +29,11 @@ $select_favourites = function($model) {
 	return utils_has_favourite($model->model_id);;
 };
 $count_favourites = utils_count_favourites();
+if (!$count_favourites)
+    utils_redirection('index.php');
 $data = new FrontData($db);
 $models = $db->models();
-$data->content = print_models($models, $select_favourites, 'women');
+$data->content = print_models($models, $select_favourites, 'favourites');
 $data->title = 'Your favourite models ('.$count_favourites.') | SILK';
 $data->pagename = 'favourites';
 echo template($data);

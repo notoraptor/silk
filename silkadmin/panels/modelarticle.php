@@ -9,19 +9,23 @@ if($id !== false && ctype_digit($id)) {
 		$fullName = $model->first_name.' '.$model->last_name;
 		$profilePhoto = $model->getPhotoByBasename($model->photo);
 		$article = $model->article;
+		$article_content = $model->article_content;
 		$show_article = $model->show_article;
 		$article_rank  = $model->article_rank;
 		if (!empty($_POST)) {
 			$article = utils_safe_post('article', $model->article);
+			$article_content = utils_safe_post('article-content', $model->article);
 			$show_article = utils_safe_post('show-article', false);
 			$article_rank = utils_safe_post('article-rank', $model->article_rank);
 			$show_article = $show_article ? 1 : 0;
 			$article = trim($article);
-			$db->model_update_article($model->model_id, $article, $show_article, $article_rank);
+			$article_content = trim($article_content);
+			$db->model_update_article($model->model_id, $article, $article_content, $show_article, $article_rank);
 			utils_message_add_success('Article mis à jour');
 		}
 		$_POST = array(
 		        'article' => $article,
+		        'article-content' => $article_content,
 		        'show-article' => $show_article,
 		        'article-rank' => $article_rank,
         );
@@ -44,7 +48,8 @@ if($id !== false && ctype_digit($id)) {
                     <legend>ARTICLE DU MODÈLE</legend>
                     <div class="table">
 						<?php
-						echo utils_textarea('Article (pour insérer une photo du modèle, taper {photo i}, i pouvant être 1, 2, 3 ou 4)','article');
+						echo utils_textarea('Vue de l\'article sur la page d\'accueil et la page About.<br/>Pour insérer une photo du modèle, taper {photo i}, i pouvant être 1, 2, 3 ou 4.','article');
+						echo utils_textarea('Contenu de l\'article. Si non définie, la vue de l\'article sera utilisée comme contenu.<br/>Pour insérer une photo du modèle, taper {photo i}, i pouvant être 1, 2, 3 ou 4.','article-content');
 						echo utils_checkbox('Afficher l\'article?', 'show-article');
 						echo utils_input('Ordre d\'affichage', 'article-rank', 'number');
 						?>
@@ -53,7 +58,7 @@ if($id !== false && ctype_digit($id)) {
                     <script src="nicEdit/nicEdit.js" type="text/javascript"></script>
                     <script type="text/javascript">//<!--
                         bkLib.onDomLoaded(function() {
-                            const indices = ['article'];
+                            const indices = ['article', 'article-content'];
                             for (let index of indices)
                                 new nicEditor({iconsPath: 'nicEdit/nicEditorIcons.gif', buttonList: ['fontSize','bold','italic','underline','left','center','right','justify','link','unlink','removeformat','xhtml']}).panelInstance(index);
                         });

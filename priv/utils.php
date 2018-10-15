@@ -113,6 +113,10 @@ class Database {
 	}
 	private function alterer_tables() {
 		$alterations = array(
+            array(
+				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'article_content\'',
+				'ALTER TABLE '.DB_PREFIX.'model ADD article_content TEXT',
+			),
 			array(
 				'SHOW COLUMNS FROM '.DB_PREFIX.'model LIKE \'article\'',
 				'ALTER TABLE '.DB_PREFIX.'model ADD article TEXT',
@@ -242,6 +246,7 @@ class Database {
 				m.hair AS hair,
 				m.eyes AS eyes,
 				m.date_added AS date_added,
+				m.article_content AS article_content,
 				m.article AS article,
 				m.show_article AS show_article,
 				m.article_rank AS article_rank,
@@ -270,8 +275,8 @@ class Database {
 		$this->secure_modif('UPDATE '.DB_PREFIX.'model SET '.(implode(',', $keysForDB)).' WHERE model_id = ?', $values);
 		return $this->model($id);
 	}
-	public function model_update_article($model_id, $article, $show, $rank) {
-		$this->secure_modif('UPDATE '.DB_PREFIX.'model SET article = ?, show_article = ?, article_rank = ? WHERE model_id = ?', array($article, $show, $rank ? $rank : 0, $model_id));
+	public function model_update_article($model_id, $article, $article_content, $show, $rank) {
+		$this->secure_modif('UPDATE '.DB_PREFIX.'model SET article = ?, article_content = ?, show_article = ?, article_rank = ? WHERE model_id = ?', array($article, $article_content, $show, $rank ? $rank : 0, $model_id));
 	}
 	public function model_photo_update($model_id, $photo_rank, $photo_name) {
 		if(!in_array($photo_rank, array(1, 2, 3, 4))) return false;
@@ -309,6 +314,7 @@ class Database {
 				m.hair AS hair,
 				m.eyes AS eyes,
 				m.date_added AS date_added,
+				m.article_content AS article_content,
 				m.article AS article,
 				m.show_article AS show_article,
 				m.article_rank AS article_rank,
@@ -742,7 +748,7 @@ function print_models_for_articles($models_with_articles) {
 									}
 								}
 								?>
-								<div class="article"><?php echo $article;?></div>
+								<div class="article" onclick="location.href = 'article.php?id=<?php echo $model->model_id;?>';"><?php echo $article;?></div>
 								<?php
 							}
 							?>
