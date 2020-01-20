@@ -113,7 +113,7 @@ capture_start();
 ?>
 	<div class="submission">COULD YOU BE A SILK MODEL ?</div>
 	<?php if($attention_message) { ?>
-	<div class="p-2 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
+	<div class="p-5 message-<?php echo $attention_type;?>"><?php echo $attention_message;?></div>
 	<?php }; ?>
 	<div class="row">
 		<div class="col-sm pt-5 submission-policy"><?php echo $config->submission_page_text; ?></div>
